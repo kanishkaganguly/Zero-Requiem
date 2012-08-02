@@ -93,7 +93,7 @@ $_SESSION['loggedin'] = "NO";
                         <li><a href="advertisement.html">MARKET</a></li>
                     </ul>
                 </center>
-                <p>© Phoenix Connection. Designed by: Nightstalker | Sephiroth | ElementCode</p>
+                <p>© Phoenix Connection. Designed by: <t title="Kanishka Ganguly">Nightstalker</t> | <t title="Nimesh Ghelani">Sephiroth</t> | <t title="Soham Chatterjee">ElementCode</t></p>
             </div>
         </div>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
