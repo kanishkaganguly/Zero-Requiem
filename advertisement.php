@@ -6,62 +6,72 @@ $_SESSION['loggedin'] = "NO";
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="/css/styles.css" media="screen"/>
-        <title>ADVERTISEMENTS</title>
+        <link href="http://fonts.googleapis.com/css?family=Abel" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="jquery-anyslider.css">
+        <title>PHOENIX | CONNEXIONS</title>
     </head>
 
     <body>
-        <div id="container">
-            <div id="logo">
-                <h1><span class="pink">ZERO</span>REQUIEM</h1>
-            </div>
-            <div id="search">
-                <form name="login" action ="profile.php" method="POST">
-                    <input type="text" name ="login_name" size="15" onfocus="if(this.value == 'Email') { this.value = ''; }" value='Email'/><input type="password" name ="login_pwd" size="15" /><input type="submit" value="LOGIN" name="login_submit" />
-                </form>
-            </div>
+        <div id="head">
+            <div id="head_cen">
+                <div id="head_sup" class="head_pad">
+                    <p class="search">
+                    <form name="login" action ="profile.php" method="POST" class="search">
+                        <input type="text" name ="login_name" class="txt" onfocus="if(this.value == 'Email') { this.value = ''; }" value='Email' size="15" />
+                        <input type="password" name ="login_pwd" class="txt" onfocus="if(this.value == 'Password') { this.value = ''; }" value='Password'  size="15" />
+                        <input type="submit" class="btn" value="LOGIN" name="login_submit" />
+                    </form>
+                    </p>
 
-            <div class="br"></div>
+                    <h1 class="logo"><a href="index.html">PHOENIX CONNEXIONS</a></h1>
 
-            <div id="navlist">
-                <ul>
-                    <li><a href="index.php" >Home</a></li>
-                    <li><a href="register.php" >Sign Up</a></li>
-                    <li><a href="advertisement.php" class="active">Advertisements</a></li>
-                    <li><a href="#">About</a></li>
-                </ul>
+                    <ul>
+                        <li><a href="index.php">Home</a></li>
+                        <li><a href="register.php">Sign Up</a></li>
+                        <li><a class="active" href="advertisement.php">Market</a></li>
+                        <li><a href="about.php">About</a></li>
+                    </ul>
+                </div>
             </div>
-
-            <div id="content">
-                <?php
-                $con = mysql_connect("localhost", "root", "");
-                if (!$con) {
-                    echo '<h3> > Could Not Connect </h3>';
-                }
-                mysql_select_db('zerorequiem');
-                if (isset($_GET["page"])) {
-                    $page = $_GET["page"];
-                } else {
-                    $page = 1;
-                };
-                $start_from = ($page - 1) * 20;
-                $result = mysql_query("SELECT * FROM ad WHERE ad_approved = 1 ORDER BY ad_added;");
-                ?>
-                <table>
-                    <tr>
-                        <td><span class="pink">Ad Details</span></td>
-                        <td><span class="pink">Ad Category</span></td>
-                        <td><span class="pink">Name</span></td>
-                        <td><span class="pink">Hostel</span></td>
-                        <td><span class="pink">Room</span></td>
-                        <td><span class="pink">Ad Price </span></td>
-                        <td><span class="pink">Date Added</span></td>
-                    </tr>
-                    <?php
-                    while ($row = mysql_fetch_assoc($result)) {
-                        $result2 = mysql_query("SELECT * FROM user WHERE uid=" . $row['uid'] . ";");
-                        while ($row2 = mysql_fetch_assoc($result2)) {
-                            echo
-                            '<tr>
+        </div> 
+        <div id="content">
+            <div id="content_cen">
+                <div id="content_sup" class="head_pad">
+                    <div id="welcom_pan">
+                        <h2><span>PCONN</span>Market</h2>
+                        <p>Products for sale</p>
+                    </div>
+                    <div id="service_pan">
+                        <?php
+                        $con = mysql_connect("localhost", "root", "");
+                        if (!$con) {
+                            echo '<h3> > Could Not Connect </h3>';
+                        }
+                        mysql_select_db('zerorequiem');
+                        if (isset($_GET["page"])) {
+                            $page = $_GET["page"];
+                        } else {
+                            $page = 1;
+                        };
+                        $start_from = ($page - 1) * 20;
+                        $result = mysql_query("SELECT * FROM ad WHERE ad_approved = 1 ORDER BY ad_added;");
+                        ?>
+                        <table>
+                            <tr>
+                                <td><span><u>Ad Details</u></span></td>
+                                <td><span><u>Ad Category</u></span></td>
+                                <td><span><u>Name</u></span></td>
+                                <td><span><u>Hostel</u></span></td>
+                                <td><span><u>Room</u></span></td>
+                                <td><span><u>Ad Price</u></span></td>
+                                <td><span><u>Date Added</u></span></td>
+                            </tr>
+                            <?php
+                            while ($row = mysql_fetch_assoc($result)) {
+                                $result2 = mysql_query("SELECT * FROM user WHERE uid=" . $row['uid'] . ";");
+                                while ($row2 = mysql_fetch_assoc($result2)) {
+                                    echo
+                                    '<tr>
                             <td>' . wordwrap($row['ad_details'], 20) . '</td>
                             <td>' . $row['ad_category'] . '</td>
                             <td>' . $row2['fname'] . '</td>
@@ -71,26 +81,47 @@ $_SESSION['loggedin'] = "NO";
                             <td>' . $row['ad_added'] . '</td>
                             <td><img src="image_display.php?id=' . $row['uid'] . '" width="100" height="100"><td>
                         </tr>';
-                        }
-                    };
-                    ?>
-                </table>
-                <?php
-                $sql = "SELECT COUNT(ad_category) FROM ad";
-                $rs_result = mysql_query($sql, $con);
-                $row = mysql_fetch_row($rs_result);
-                $total_records = $row[0];
-                $total_pages = ceil($total_records / 20);
+                                }
+                            };
+                            ?>
+                        </table>
+                        <?php
+                        $sql = "SELECT COUNT(ad_category) FROM ad";
+                        $rs_result = mysql_query($sql, $con);
+                        $row = mysql_fetch_row($rs_result);
+                        $total_records = $row[0];
+                        $total_pages = ceil($total_records / 20);
 
-                for ($i = 1; $i <= $total_pages; $i++) {
-                    echo "<br><br><br><span class = \"small\">Page : <a href='advertisement.php?page=" . $i . "'>" . $i . "</a></span> ";
-                }
-                ?>
+                        for ($i = 1; $i <= $total_pages; $i++) {
+                            echo "<br><br><br><span>Page : <a href='advertisement.php?page=" . $i . "'>" . $i . "</a></span> ";
+                        }
+                        ?>
+                    </div>
+                </div>
             </div>
-            <div class = "br"></div>
-            <div id = "footer">
-                <p class = "center" > Copyright & copy; 2012 | Nightstalker | ZERO_REQUIEM | Sephiroth </p>
-                <br />
+        </div>
+        <div id="foot">
+            <div id="foot_cen">
+                <h6><a href="index.php">phoenix</a></h6>
+                <center>
+                    <ul>
+                        <li class="space"></li> <li class="space"></li>
+                        <li class="space"></li><li class="space"></li>
+                        <li class="space"></li><li class="space"></li>
+                        <li class="space"></li><li class="space"></li>
+                        <li class="space"></li><li class="space"></li>
+                        <li class="space"></li><li class="space"></li>
+                        <li><a href="index.php">HOME</a></li>
+                        <li class="space">|</li>
+                        <li><a href="about.php">ABOUT</a></li>
+                        <li class="space">|</li>
+                        <li><a href="services.html">SERVICES</a></li>
+                        <li class="space">|</li>
+                        <li><a href="advertisement.html">MARKET</a></li>
+                    </ul>
+                </center>
+                <p>© Phoenix Connection. Designed by: <t title="Kanishka Ganguly">Nightstalker</t> | <t title="Nimesh Ghelani">Sephiroth</t> | <t title="Soham Chatterjee">ElementCode</t></p>
             </div>
+        </div>
     </body>
 </html>
