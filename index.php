@@ -8,16 +8,7 @@ $_SESSION['loggedin'] = "NO";
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="/css/styles.css" media="screen"/>
         <link href="http://fonts.googleapis.com/css?family=Abel" rel="stylesheet" type="text/css" />
-        <script type="text/javascript" src="js/swfobject/swfobject.js"></script>
-        <script type="text/javascript">
-            var flashvars = {};
-            flashvars.xml = "config.xml";
-            flashvars.font = "font.swf";
-            var attributes = {};
-            attributes.wmode = "transparent";
-            attributes.id = "slider";
-            swfobject.embedSWF("cu3er.swf", "cu3er-container", "800", "360", "9", "expressInstall.swf", flashvars, attributes);
-        </script>
+        <link rel="stylesheet" href="jquery-anyslider.css">
         <title>PHOENIX | CONNEXIONS</title>
     </head>
     <body>
@@ -42,11 +33,15 @@ $_SESSION['loggedin'] = "NO";
                         <li><a href="advertisement.php">Market</a></li>
                         <li><a href="about.php">About</a></li>
                     </ul>
-
-                    <div id="cu3er-container">
-                        <a href="http://www.adobe.com/go/getflashplayer">
-                            <img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" />
-                        </a>
+                    <div id="slider" class="slider">
+                        <section>
+                            <img src="anyslider/img/example.jpg" alt="Australian road sign picturing a kangaroo">
+                            <img src="anyslider/img/example.jpg" alt="Australian road sign picturing a kangaroo">
+                        </section>
+                        <section>
+                            <img src="anyslider/img/example.jpg" alt="Australian road sign picturing a kangaroo">
+                            <img src="anyslider/img/example.jpg" alt="Australian road sign picturing a kangaroo">
+                        </section>
                     </div>
                 </div>
             </div>
@@ -55,7 +50,7 @@ $_SESSION['loggedin'] = "NO";
             <div id="content_cen">
                 <div id="content_sup">
                     <div id="ct_pan">
-
+                        THE PHOENIX CONNEXIONS
                     </div>
                     <div id="welcom_pan">
                         <h2><span>PCONN</span>Introduction</h2>
@@ -101,5 +96,21 @@ $_SESSION['loggedin'] = "NO";
                 <p>© Phoenix Connection. Designed by: Nightstalker | Sephiroth | ElementCode</p>
             </div>
         </div>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script src="anyslider/jquery.easing.1.3.js"></script>
+        <script src="anyslider/jquery.anyslider.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $("#slider").AnySlider({
+                    animation: "slide",
+                    interval: 4000,
+                    rtl: true,
+                    showControls: false,
+                    showOnHover: false,
+                    startSlide: 2
+                });
+		
+            });
+        </script>
     </body>
 </html>
