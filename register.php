@@ -74,7 +74,6 @@ and open the template in the editor.
         </script>
     </head>
     <body>
-    <body>
         <div id="head">
             <div id="head_cen">
                 <div id="head_sup" class="head_pad">

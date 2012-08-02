@@ -72,7 +72,8 @@ if (isset($_REQUEST['ad_submit'])) {
                      
                     <div id = "search">
                         <form name = "login" action = "index.php" method = "link">
-                            <input type = "text" name = "login_name" VALUE = "' . $name . '" size = "15" disabled = "disabled"/><input type = "submit" value = "LOGOUT" name = "login_submit" />
+                            <input type = "text" name = "login_name" VALUE = "' . $name . '" size = "15" disabled = "disabled"/>
+                            <input type = "submit" value = "LOGOUT" name = "login_submit" />
                         </form>
                     </div>
 
