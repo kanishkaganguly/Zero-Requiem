@@ -58,29 +58,32 @@ $_SESSION['loggedin'] = "NO";
                         ?>
                         <table>
                             <tr>
-                                <td><span><u>Ad Details</u></span></td>
-                                <td><span><u>Ad Category</u></span></td>
+                                <td><span><u>Details</u></span></td>
+                                <td><span><u>Category</u></span></td>
                                 <td><span><u>Name</u></span></td>
                                 <td><span><u>Hostel</u></span></td>
                                 <td><span><u>Room</u></span></td>
-                                <td><span><u>Ad Price</u></span></td>
+                                <td><span><u>Mobile</u></span></td>
+                                <td><span><u>Price</u></span></td>
                                 <td><span><u>Date Added</u></span></td>
                             </tr>
                             <?php
                             while ($row = mysql_fetch_assoc($result)) {
                                 $result2 = mysql_query("SELECT * FROM user WHERE uid=" . $row['uid'] . ";");
+                                $result3 = mysql_query("SELECT ad_id FROM ad WHERE uid=" . $row['uid'] . ";");
                                 while ($row2 = mysql_fetch_assoc($result2)) {
                                     echo
                                     '<tr>
-                            <td>' . wordwrap($row['ad_details'], 20) . '</td>
-                            <td>' . $row['ad_category'] . '</td>
-                            <td>' . $row2['fname'] . '</td>
-                            <td>' . $row2['hostel'] . '</td>
-                            <td>' . $row2['room'] . '</td>
-                            <td> Rs. ' . $row['ad_price'] . '</td>
-                            <td>' . $row['ad_added'] . '</td>
-                            <td><img src="image_display.php?id=' . $row['uid'] . '" width="100" height="100"><td>
-                        </tr>';
+                                        <td>' . wordwrap($row['ad_details'], 20) . '</td>
+                                        <td>' . $row['ad_category'] . '</td>
+                                        <td>' . $row2['fname'] . '</td>
+                                        <td>' . $row2['hostel'] . '</td>
+                                        <td>' . $row2['room'] . '</td>
+                                        <td>' . $row2['mob'] . '</td>   
+                                        <td> Rs. ' . $row['ad_price'] . '</td>
+                                        <td>' . $row['ad_added'] . '</td>
+                                        <td><img src="image_display.php?id=' . $row['ad_id'] . '" width="100" height="100"></td>
+                                   </tr>';
                                 }
                             };
                             ?>

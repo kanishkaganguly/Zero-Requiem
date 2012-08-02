@@ -7,7 +7,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
 
     mysql_select_db("zerorequiem") or die(mysql_error());
 
-    $sql = "SELECT ad_img FROM ad WHERE ad_approved=1 AND ad_id=" . $_GET['id'] . ";";
+    $sql = "SELECT ad_img FROM ad WHERE ad_id=" . $_GET['id'] . ";";
 
     $result = mysql_query("$sql") or die("Invalid query: " . mysql_error());
 

@@ -35,12 +35,18 @@ $_SESSION['loggedin'] = "NO";
                     </ul>
                     <div id="slider" class="slider">
                         <section>
-                            <img src="anyslider/img/example.jpg" alt="Australian road sign picturing a kangaroo">
-                            <img src="anyslider/img/example.jpg" alt="Australian road sign picturing a kangaroo">
+                            <?php
+                            for ($i = 1; $i < 6; $i++) {
+                                echo '<img src="slider_display.php?id=' . $i . '" width="150" height="150">';
+                            }
+                            ?>
                         </section>
                         <section>
-                            <img src="anyslider/img/example.jpg" alt="Australian road sign picturing a kangaroo">
-                            <img src="anyslider/img/example.jpg" alt="Australian road sign picturing a kangaroo">
+                            <?php
+                            for ($j = 7; $j < 12; $j++) {
+                                echo '<img src="slider_display.php?id=' . $j . '" width="150" height="150">';
+                            }
+                            ?>
                         </section>
                     </div>
                 </div>
@@ -68,6 +74,11 @@ $_SESSION['loggedin'] = "NO";
                             <h3><span>discussion</span>Forum</h3>
                             <p>Online discussion portal</p>
                             <p class="descrip">Just login and start talking about your favourite movies, games, technology, gadgets and much more.</p>
+                        </li>
+                        <li>
+                            <h3><span>other</span>Services</h3>
+                            <p>Much More Inside</p>
+                            <p class="descrip">Feel free to explore our other services on offer including a news feed, an events reminder page and offers in town.</p>
                         </li>
                     </ul>
                 </div>
@@ -103,7 +114,7 @@ $_SESSION['loggedin'] = "NO";
             $(document).ready(function () {
                 $("#slider").AnySlider({
                     animation: "slide",
-                    interval: 4000,
+                    interval: 3000,
                     rtl: true,
                     showControls: false,
                     showOnHover: false,
