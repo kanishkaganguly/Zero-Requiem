@@ -73,7 +73,7 @@ $_SESSION['loggedin'] = "NO";
                         <li>
                             <h3><span>discussion</span>Forum</h3>
                             <p>Online discussion portal</p>
-                            <p class="descrip">Just login and start talking about your favourite movies, games, technology, gadgets and much more.</p>
+                            <p class="descrip">Just <a href ="phpBB3/index.php">login</a> and start talking about your favourite movies, games, technology, gadgets and much more.</p>
                         </li>
                         <li>
                             <h3><span>other</span>Services</h3>
