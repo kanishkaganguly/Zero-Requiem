@@ -133,7 +133,7 @@ if (isset($_REQUEST['login_submit'])) {
                         <li><a href="index.php">Home</a></li>
                         <li><a href="advertisement.php">Market</a></li>
                         <li><a class="active" href="#">Profile</a></li>
-                        <li><a href="about.php">About</a></li>
+                        <li><a href="user_records.php">History</a></li>
                     </ul>
                 </div>
             </div>

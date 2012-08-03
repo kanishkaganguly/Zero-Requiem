@@ -113,6 +113,7 @@ if (isset($_REQUEST['ad_submit'])) {
                         <li><a href="index.php">Home</a></li>
                         <li><a href="advertisement.php">Market</a></li>
                         <li><a class="active" href="#">Profile</a></li>
+                        <li><ahref="user_records.php">History</a></li>
                         <li><a href="about.php">About</a></li>
                     </ul>
                 </div>
@@ -122,11 +123,11 @@ if (isset($_REQUEST['ad_submit'])) {
             <div id="content_cen">
                 <div id="content_sup" class="head_pad">
                     <div id="welcom_pan">
-                        <h2><span>' . $name . '</span>COULD NOT POST</h2>
+                        <h2><span>' . $name . '</span>COULD NOT CONNECT</h2>
                         <p>UNABLE TO CONNECT</p>
                     </div>
                     <div id="service_pan">
-                        <p>Sorry, Post Unsuccessful</p>
+                        <p>Sorry, Connection Unsuccessful</p>
                     </div>
                      </div>
                 </div>
@@ -190,85 +191,118 @@ if (isset($_REQUEST['ad_submit'])) {
             if (!mysql_query($insert_table2, $con)) {
                 die('<html>
                 <head>
-                    <meta http-equiv = "Content-Type" content = "text/html; charset=UTF-8">
-                    <link rel = "stylesheet" type = "text/css" href = "/css/styles.css" media = "screen"/>
-                    <title>POST UNSUCCESSFUL</title>
+                   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+                    <link rel="stylesheet" type="text/css" href="/css/styles.css" media="screen"/>
+                    <link rel="stylesheet" href="jquery-anyslider.css">
+                    <title>PHOENIX | CONNEXIONS</title>
                 </head>
 
                 <body>
-                    <div id = "container">
-                        <div id = "logo">
-                            <h1><span class = "pink">ZERO</span>REQUIEM</h1>
-                        </div>
-                     
-                    <div id = "search">
-                        <form name = "login" action = "index.php" method = "link">
-                            <input type = "text" name = "login_name" VALUE = "' . $name . '" size = "15" disabled = "disabled"/><input type = "submit" value = "LOGOUT" name = "login_submit" />
-                        </form>
-                    </div>
+                   <div id="head">
+            <div id="head_cen">
+                <div id="head_sup" class="head_pad">
+                    <p class="search">
+                      <form name = "logout" action = "index.php" method = "link" class="search">
+                            <input type = "text" name = "login_name" VALUE = "' . $name . '" size = "15" disabled = "disabled" class="txt" />
+                            <a href="index.php"><input type = "submit" value = "LOGOUT" name = "login_submit" class="btn" /></a>
+                       </form>
+                    </p>
 
-                    <div class = "br"></div>
+                    <h1 class="logo"><a href="index.html">PHOENIX CONNEXIONS</a></h1>
 
-                    <div id = "navlist">
-                        <ul>
-                            <li><a href = "index.php" >Home</a></li>
-                            <li><a href = "register.php" class = "active">Register</a></li>
-                            <li><a href = "advertisement.php">Advertisements</a></li>
-                            <li><a href = "#">About</a></li>
-                        </ul>
-                    </div>
-
-            <div id = "content">
-                <h3> > UNABLE TO ENTER DATA</h3>
-                    <p><span class = "pink">' . $name . '</span>, your advertisement has been NOT been successfully posted</p>
-                    <p>Try again <a href="index.php">here</p>
-            </div>
-
-            <div class = "br"></div>
-                <div id = "footer">
-                    <p class = "center" > Copyright & copy; 2012 | Nightstalker | ZERO_REQUIEM | Sephiroth </p>
-                <br />
+                    <ul>
+                        <li><a href="index.php">Home</a></li>
+                        <li><a href="advertisement.php">Market</a></li>
+                        <li><a class="active" href="#">Profile</a></li>
+                        <li><ahref="user_records.php">History</a></li>
+                        <li><a href="about.php">About</a></li>
+                    </ul>
                 </div>
+            </div>
+        </div>
+           <div id="content">
+            <div id="content_cen">
+                <div id="content_sup" class="head_pad">
+                    <div id="welcom_pan">
+                        <h2><span>' . $name . '</span>COULD NOT POST</h2>
+                        <p>Sorry, Posting Unsuccessful</p>
+                    </div>
+                    <div id="service_pan">
+                        Sorry, your post could not be uploaded. Please contact admin.
+                    </div>
+                     </div>
+                </div>
+                 </div>
+                </div>
+            </div>
+        </div>
+             <div id="foot">
+            <div id="foot_cen">
+                <h6><a href="index.php">phoenix</a></h6>
+                <center>
+                    <ul>
+                        <li class="space"></li> <li class="space"></li>
+                        <li class="space"></li><li class="space"></li>
+                        <li class="space"></li><li class="space"></li>
+                        <li class="space"></li><li class="space"></li>
+                        <li class="space"></li><li class="space"></li>
+                        <li class="space"></li><li class="space"></li>
+                        <li><a href="index.php">HOME</a></li>
+                        <li class="space">|</li>
+                        <li><a href="about.php">ABOUT</a></li>
+                        <li class="space">|</li>
+                        <li><a href="services.php">SERVICES</a></li>
+                        <li class="space">|</li>
+                        <li><a href="advertisement.php">MARKET</a></li>
+                    </ul>
+                </center>
+                <p>© Phoenix Connection. Designed by: <t title="Kanishka Ganguly">Nightstalker</t> | <t title="Nimesh Ghelani">Sephiroth</t> | <t title="Soham Chatterjee">ElementCode</t></p>
+            </div>
+        </div>
                 </body>
             </html>');
             } else {
                 echo '<html>
-                <head>
-                    <meta http-equiv = "Content-Type" content = "text/html; charset=UTF-8">
-                    <link rel = "stylesheet" type = "text/css" href = "/css/styles.css" media = "screen"/>
-                    <title>POST SUCCESSFUL</title>
+               <head>
+                   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+                    <link rel="stylesheet" type="text/css" href="/css/styles.css" media="screen"/>
+                    <link rel="stylesheet" href="jquery-anyslider.css">
+                    <title>PHOENIX | CONNEXIONS</title>
                 </head>
 
                 <body>
-                    <div id = "container">
-                        <div id = "logo">
-                            <h1><span class = "pink">ZERO</span>REQUIEM</h1>
-                        </div>
-                     
-                    <div id = "search">
-                        <form name = "login" action = "index.php" method = "link">
-                            <input type = "text" name = "login_name" VALUE = "' . $name . '" size = "15" disabled = "disabled"/><input type = "submit" value = "LOGOUT" name = "login_submit" />
-                        </form>
-                    </div>
+                   <div id="head">
+            <div id="head_cen">
+                <div id="head_sup" class="head_pad">
+                    <p class="search">
+                      <form name = "logout" action = "index.php" method = "link" class="search">
+                            <input type = "text" name = "login_name" VALUE = "' . $name . '" size = "15" disabled = "disabled" class="txt" />
+                            <a href="index.php"><input type = "submit" value = "LOGOUT" name = "login_submit" class="btn" /></a>
+                       </form>
+                    </p>
 
-                    <div class = "br"></div>
+                    <h1 class="logo"><a href="index.html">PHOENIX CONNEXIONS</a></h1>
 
-                    <div id = "navlist">
-                        <ul>
-                            <li><a href = "index.php" >Home</a></li>
-                            <li><a href = "register.php" class = "active">Register</a></li>
-                            <li><a href = "advertisement.php">Advertisements</a></li>
-                            <li><a href = "#">About</a></li>
-                        </ul>
+                    <ul>
+                        <li><a href="index.php">Home</a></li>
+                        <li><a href="advertisement.php">Market</a></li>
+                        <li><a class="active" href="#">Profile</a></li>
+                        <li><ahref="user_records.php">History</a></li>
+                        <li><a href="about.php">About</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+            <div id="content">
+            <div id="content_cen">
+                <div id="content_sup" class="head_pad">
+                    <div id="welcom_pan">
+                        <h2><span>' . $name . '</span>ADVERTISEMENT POSTED</h2>
+                        <p>Posting Successful</p>
                     </div>
-                    
-            <div id = "content">
-                <h3> > ADVERTISEMENT POST DETAILS</h3>
-                    <p><span class = "pink">' . $name . '</span>, your advertisement has been successfully posted</p>
-                    <p> Please await administrator approval after which your advertisement shall go online </p>
-                    <p> You have posted the following advertisement :</p>
+                <div id="service_pan">
                 <table>
-                    <form name = "post_ads"  action = "index.php"method = "POST">
+                    <form name = "post_ads"  action = "index.php" method = "POST">
                 <tr>
                     <td>Advertisement Details</td>
                     <td>' . $_POST['ad_details'] . '</td>
@@ -286,18 +320,40 @@ if (isset($_REQUEST['ad_submit'])) {
                     <td>' . date("Y\-m\-d") . '</td>
                 </tr>
                 <tr>
-                    <td><input type = "submit" value = "DONE" name = "ad_submit" /></td>
+                    <td><input type = "submit" value = "DONE" name = "ad_submit" class="btn"/></td>
                 </tr>
             </form>
             </table>
             </div>
             </div>
-
-            <div class = "br"></div>
-                <div id = "footer">
-                    <p class = "center" > Copyright & copy; 2012 | Nightstalker | ZERO_REQUIEM | Sephiroth </p>
-                <br />
+                    </div>
+                 </div>
                 </div>
+            </div>
+        </div>
+            <div id="foot">
+            <div id="foot_cen">
+                <h6><a href="index.php">phoenix</a></h6>
+                <center>
+                    <ul>
+                        <li class="space"></li> <li class="space"></li>
+                        <li class="space"></li><li class="space"></li>
+                        <li class="space"></li><li class="space"></li>
+                        <li class="space"></li><li class="space"></li>
+                        <li class="space"></li><li class="space"></li>
+                        <li class="space"></li><li class="space"></li>
+                        <li><a href="index.php">HOME</a></li>
+                        <li class="space">|</li>
+                        <li><a href="about.php">ABOUT</a></li>
+                        <li class="space">|</li>
+                        <li><a href="services.php">SERVICES</a></li>
+                        <li class="space">|</li>
+                        <li><a href="advertisement.php">MARKET</a></li>
+                    </ul>
+                </center>
+                <p>© Phoenix Connection. Designed by: <t title="Kanishka Ganguly">Nightstalker</t> | <t title="Nimesh Ghelani">Sephiroth</t> | <t title="Soham Chatterjee">ElementCode</t></p>
+            </div>
+        </div>
                 </body>
             </html>';
             }
