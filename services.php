@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>Phoenix | Connexions</title>
+        <title>PHOENIX | CONNEXIONS</title>
         <link href="css/styles.css" rel="stylesheet" type="text/css" media="all" />
     </head>
 
@@ -22,9 +22,9 @@
 
                     <ul>
                         <li><a href="index.php">Home</a></li>
-                        <li><a href="register.php">Sign Up</a></li>
+                        <li><a  href="register.php">Sign Up</a></li>
                         <li><a href="advertisement.php">Market</a></li>
-                        <li><a class="active" href="about.php">About</a></li>
+                        <li><a class="active" href="#"><font size="1.5em">Services</font></a></li>
                     </ul>
                 </div>
             </div>
@@ -33,30 +33,23 @@
             <div id="content_cen">
                 <div id="content_sup" class="head_pad">
                     <div id="welcom_pan">
-                        <h2><span>about</span>PCONN</h2>
-                        <p>
+                        <h2><span>PCONN</span> Services</h2>
+                        <p>We provide the following services right now, with more amazing features in the pipeline.</p>
                     </div>
-                    <ul id="infoPan">
-                        <li>
-                            <h3><span></span>Nightstalker<img src="about_nightstalker.jpg" alt="" height="50" width="50"/></h3>
-                            <p>Level : PHP Ninja</p>
-                            <p class="descrip"></p>
-                        </li>
-                        <li>
-                            <h3><span></span>Sephiroth<img src="about_sephiroth.gif" alt="" height="50" width="50"/></h3>
-                            <p>Level : Python Pro</p>
-                            <p class="descrip"></p>
-                        </li>
-                        <li>
-                            <h3><span></span><font size="5px">ElementCode</font><img src="about_elementcode.png" alt="" height="60" width="50"/></h3>
-                            <p>Level : JAVA Geek</p>
-                            <p class="descrip"></p>
-                        </li>
-                    </ul>
+                    <div id="service_pan">
+                        <ul>
+                            <li>
+                                <h5>The Market</h5>
+                                <p>The one stop shop for all your buying and selling needs. <a href="advertisement.php">More</a></p>
+                            </li>
+                            <li>
+                                <h5>The Discussion Forum</h5>
+                                <p>THE place to discuss about everything you may fancy, including movies, music, games, gadgets and whatnots. <a href="phpBB3/index.php">More</a></p>
+                            </li>
+                        </ul>
+                    </div>
+                    <center> MUCH MORE TO COME. VERY SOON. </center>
                 </div>
-                <p> We are a start-up formed by three bored, jobless students of Computer Science and Engineering stream of B.I.T. Mesra.</p>
-                <p> A lack of female company in our lives (VERY TYPICAL OF ENGINEERING COLLEGES) made us while away our time in front of our computer screens.</p>
-                <p> We realized that our college lacks a one-stop shop for basic needs such as a <a href="advertisement.php">buy-sell portal</a>, <a href="phpBB3/index.php">discussion forums</a>, and much more...
             </div>
         </div>
         <div id="foot">
