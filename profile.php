@@ -70,9 +70,9 @@ if (isset($_REQUEST['login_submit'])) {
                     <li class="space">|</li>
                     <li><a href="about.php">ABOUT</a></li>
                     <li class="space">|</li>
-                    <li><a href="services.html">SERVICES</a></li>
+                    <li><a href="services.php">SERVICES</a></li>
                     <li class="space">|</li>
-                    <li><a href="advertisement.html">MARKET</a></li>
+                    <li><a href="advertisement.php">MARKET</a></li>
                 </ul>
             </center>
             <p>© Phoenix Connection. Designed by: <t title="Kanishka Ganguly">Nightstalker</t> | <t title="Nimesh Ghelani">Sephiroth</t> | <t title="Soham Chatterjee">ElementCode</t></p>
@@ -204,9 +204,9 @@ if (isset($_REQUEST['login_submit'])) {
                         <li class="space">|</li>
                         <li><a href="about.php">ABOUT</a></li>
                         <li class="space">|</li>
-                        <li><a href="services.html">SERVICES</a></li>
+                        <li><a href="services.php">SERVICES</a></li>
                         <li class="space">|</li>
-                        <li><a href="advertisement.html">MARKET</a></li>
+                        <li><a href="advertisement.php">MARKET</a></li>
                     </ul>
                 </center>
                 <p>© Phoenix Connection. Designed by: <t title="Kanishka Ganguly">Nightstalker</t> | <t title="Nimesh Ghelani">Sephiroth</t> | <t title="Soham Chatterjee">ElementCode</t></p>
