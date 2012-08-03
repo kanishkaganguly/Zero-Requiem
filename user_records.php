@@ -1,46 +1,76 @@
 <?php
+
 session_start();
 if ($_SESSION['loggedin'] == "NO") {
     echo'  <html>
             <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+                 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
                 <link rel="stylesheet" type="text/css" href="/css/styles.css" media="screen"/>
-                <title>LOGIN UNSUCCESSFUL</title>
+                <link href="http://fonts.googleapis.com/css?family=Abel" rel="stylesheet" type="text/css" />
+                <link rel="stylesheet" href="jquery-anyslider.css">
+                <title>PHOENIX | CONNEXIONS</title>
             </head>
             
         <body>
-                <div id="container">
-                    <div id="logo">
-                        <h1><span class="pink">ZERO</span>REQUIEM</h1>
-                    </div>
-                    <div id="search">
-                         <form name="login" action ="profile.php" method="POST">
-                            <input type="text" name ="login_name" size="15" /><input type="password" name ="login_pwd" size="15" /><input type="submit" value="LOGIN" name="login_submit" />
+               <div id="head">
+            <div id="head_cen">
+                <div id="head_sup" class="head_pad">
+                    <p class="search">
+                        <form name="login" action ="profile.php" method="POST" class="search">
+                            <input type="text" name = "login_name" class="txt" onfocus="if(this.value == "Email") { this.value = ""; }" value="Email" size="15" />
+                            <input type="password" name = "login_pwd" class="txt" onfocus="if(this.value == "Password") { this.value = ""; }" value="Password"  size="15" />
+                            <input type="submit" class="btn" value="LOGIN" name="login_submit" />
                         </form>
-                    </div>
- 
-                    <div class="br"></div>
+                    </p>
 
-                    <div id="navlist">
-                        <ul>
-                            <li><a href="index.php" >Home</a></li>
-                            <li><a href="register.php" class="active">Sign Up</a></li>
-                            <li><a href="advertisement.php">Advertisements</a></li>
-                            <li><a href="#">About</a></li>
-                        </ul>
-                    </div>
-            
-                    <div id="content">
-                        <h3> > NOT LOGGED IN </h3>
-                        <p> You need to enter correct username or password. Please <a href="register.php">REGISTER</a> or LOGIN again. </p>
-                    </div>
+                    <h1 class="logo"><a href="index.html">PHOENIX CONNEXIONS</a></h1>
+
+                    <ul>
+                        <li><a href="index.php">Home</a></li>
+                        <li><a href="advertisement.php">Market</a></li>
+                        <li><a class="active" href="register.php">Profile</a></li>
+                        <li><a href="about.php">About</a></li>
+                    </ul>
                 </div>
-                
-                <div class="br"></div>
-                    <div id="footer">
-                        <p class="center">Copyright &copy; 2012 | Nightstalker | ZERO_REQUIEM | Sephiroth </p> 
-                    <br />
+            </div>
+        </div>
+       <div id="content">
+            <div id="content_cen">
+                <div id="content_sup" class="head_pad">
+                    <div id="welcom_pan">
+                        <h2><span>Error</span>Logging In</h2>
+                        <p>Please register with <span>PHOENIX CONNEXIONS</span> to avail of all our great features.</p>
+                    </div>
+                     <div id="service_pan">
+                     <p>There has been an error in logging in. Please enter correct username and/or password.</p>
+                     <p>Register <a href="register.php">here</a> to use our services.</p>
+                     </div>
                 </div>
+            </div>
+       </div>         
+       <div id="foot">
+        <div id="foot_cen">
+            <h6><a href="index.php">phoenix</a></h6>
+            <center>
+                <ul>
+                    <li class="space"></li> <li class="space"></li>
+                    <li class="space"></li><li class="space"></li>
+                    <li class="space"></li><li class="space"></li>
+                    <li class="space"></li><li class="space"></li>
+                    <li class="space"></li><li class="space"></li>
+                    <li class="space"></li><li class="space"></li>
+                    <li><a href="index.php">HOME</a></li>
+                    <li class="space">|</li>
+                    <li><a href="about.php">ABOUT</a></li>
+                    <li class="space">|</li>
+                    <li><a href="services.php">SERVICES</a></li>
+                    <li class="space">|</li>
+                    <li><a href="advertisement.php">MARKET</a></li>
+                </ul>
+            </center>
+            <p>© Phoenix Connection. Designed by: <t title="Kanishka Ganguly">Nightstalker</t> | <t title="Nimesh Ghelani">Sephiroth</t> | <t title="Soham Chatterjee">ElementCode</t></p>
+        </div>
+    </div>
         </body>
     </html>';
 } else if ($_SESSION['loggedin'] == "YES") {
@@ -48,40 +78,47 @@ if ($_SESSION['loggedin'] == "NO") {
             <head>
                 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
                 <link rel="stylesheet" type="text/css" href="/css/styles.css" media="screen"/>
-                <title>USER RECORDS</title>
+                <link rel="stylesheet" href="jquery-anyslider.css">
+                <title>PHOENIX | CONNEXIONS</title>
             </head>
             
         <body>
-                <div id="container">
-                    <div id="logo">
-                        <h1><span class="pink">ZERO</span>REQUIEM</h1>
-                    </div>
-                    <div id="search">
-                        <form name="login" action ="index.php" method="link">
-                            <input type="text" name ="login_name" VALUE ="' . $_SESSION['name'] . '" size="15" disabled = "disabled"/><input type="submit" value="LOGOUT" name="login_submit" />
-                        </form>
-                    </div>
- 
-                    <div class="br"></div>
+               <div id="head">
+            <div id="head_cen">
+                <div id="head_sup" class="head_pad">
+                    <p class="search">
+                      <form name = "logout" action = "index.php" method = "link" class="search">
+                            <input type = "text" name = "login_name" VALUE = "' . $_SESSION['name'] . '" size = "15" disabled = "disabled" class="txt" />
+                            <a href="index.php"><input type = "submit" value = "LOGOUT" name = "login_submit" class="btn" /></a>
+                       </form>
+                    </p>
 
-                    <div id="navlist">
-                        <ul>
-                            <li><a href="index.php" >Home</a></li>
-                            <li><a href="register.php">Sign Up</a></li>
-                            <li><a href="advertisement.php">Advertisements</a></li>
-                            <li><a href="#" class = "active">Records</a></li>
-                            <li><a href="#">About</a></li>
-                        </ul>
+                    <h1 class="logo"><a href="index.html">PHOENIX CONNEXIONS</a></h1>
+
+                    <ul>
+                        <li><a href="index.php">Home</a></li>
+                        <li><a href="advertisement.php">Market</a></li>
+                        <li><a class="active" href="user_records.php">History</a></li>
+                        <li><a href="about.php">About</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+                   <div id="content">
+            <div id="content_cen">
+                <div id="content_sup" class="head_pad">
+                    <div id="welcom_pan">
+                        <h2><span>' . $_SESSION['name'] . '</span>TRANSACTION HISTORY</h2>
+                        <p>The following is your transaction history </p>
                     </div>
-            
-                    <div id="content">
-                        <h3> > YOUR TRANSACTION DETAILS </h3>
+                        
                         <table>
                             <tr>
-                                <td><span class="pink">Ad Details</span></td>
-                                <td><span class="pink">Ad Category</span></td>
-                                <td><span class="pink">Ad Pricing</span></td>
-                                <td><span class="pink">Ad Added</span></td>
+                                <td><span>Ad Details</span></td>
+                                <td><span>Ad Category</span></td>
+                                <td><span>Ad Pricing</span></td>
+                                <td><span>Ad Added</span></td>
                             </tr>'
     .
     $con = mysql_connect("localhost", "root", "");
@@ -93,9 +130,9 @@ if ($_SESSION['loggedin'] == "NO") {
         $get_uid = mysql_query("SELECT * FROM user WHERE email = '{$_SESSION['name']}' AND pwd = '{$_SESSION['pass']}'");
         $row2 = mysql_fetch_array($get_uid);
         $uid = $row2['uid'];
-
-        $mysql2 = mysql_query("SELECT * FROM ad WHERE uid=" . $uid . " ORDER BY ad_added;");
-        while ($row = mysql_fetch_assoc($mysql2)) {
+        $sql_query = "SELECT * FROM ad WHERE uid=" . $uid . " ORDER BY ad_added;";
+        $mysql2 = mysql_query($sql_query);
+        while ($row = mysql_fetch_array($mysql2, MYSQL_ASSOC)) {
             echo '<tr>';
             echo '<td>' . wordwrap($row['ad_details'], 20) . '</td>';
             echo '<td>' . $row['ad_category'] . '</td>';
@@ -108,12 +145,33 @@ if ($_SESSION['loggedin'] == "NO") {
     '</table>
                         </div>
                 </div>
-                
-                <div class="br"></div>
-                    <div id="footer">
-                        <p class="center">Copyright &copy; 2012 | Nightstalker | ZERO_REQUIEM | Sephiroth </p> 
-                    <br />
+                 </div>
                 </div>
+            </div>
+        </div>
+                <div id="foot">
+            <div id="foot_cen">
+                <h6><a href="index.php">phoenix</a></h6>
+                <center>
+                    <ul>
+                        <li class="space"></li> <li class="space"></li>
+                        <li class="space"></li><li class="space"></li>
+                        <li class="space"></li><li class="space"></li>
+                        <li class="space"></li><li class="space"></li>
+                        <li class="space"></li><li class="space"></li>
+                        <li class="space"></li><li class="space"></li>
+                        <li><a href="index.php">HOME</a></li>
+                        <li class="space">|</li>
+                        <li><a href="about.php">ABOUT</a></li>
+                        <li class="space">|</li>
+                        <li><a href="services.php">SERVICES</a></li>
+                        <li class="space">|</li>
+                        <li><a href="advertisement.php">MARKET</a></li>
+                    </ul>
+                </center>
+                <p>© Phoenix Connection. Designed by: <t title="Kanishka Ganguly">Nightstalker</t> | <t title="Nimesh Ghelani">Sephiroth</t> | <t title="Soham Chatterjee">ElementCode</t></p>
+            </div>
+        </div>
         </body>
     </html>';
 }
