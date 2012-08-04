@@ -25,7 +25,7 @@ $_SESSION['loggedin'] = "NO";
                     </form>
                     </p>
 
-                    <h1 class="logo"><a href="index.html">PHOENIX CONNEXIONS</a></h1>
+                    <h1 class="logo"><a href="index.php">PHOENIX CONNEXIONS</a></h1>
 
                     <ul>
                         <li><a class="active" href="index.php">Home</a></li>
@@ -43,7 +43,7 @@ $_SESSION['loggedin'] = "NO";
                             mysql_select_db('zerorequiem');
                             $slider_query = mysql_query("SELECT ad_id FROM ad ORDER BY ad_added LIMIT 0,5;");
                             while ($set1 = mysql_fetch_assoc($slider_query)) {
-                                echo '<img src="slider_display.php?id=' . $set1['ad_id'] . '" width="150" height="150">';
+                                echo '<a href="advertisement.php/#' . $set1['ad_id'] . '"><img src="slider_display.php?id=' . $set1['ad_id'] . '" width="150" height="150"></a>';
                             }
                             ?>
                         </section>
@@ -56,7 +56,7 @@ $_SESSION['loggedin'] = "NO";
                             mysql_select_db('zerorequiem');
                             $slider_query = mysql_query("SELECT ad_id FROM ad ORDER BY ad_added LIMIT 6,10;");
                             while ($set2 = mysql_fetch_assoc($slider_query)) {
-                                echo '<img src="slider_display.php?id=' . $set2['ad_id'] . '" width="150" height="150">';
+                                echo '<a href="advertisement.php/#' . $set2['ad_id'] . '"><img src="slider_display.php?id=' . $set2['ad_id'] . '" width="150" height="150"></a>';
                             }
                             ?>
                         </section>
@@ -119,6 +119,7 @@ $_SESSION['loggedin'] = "NO";
                 <p>© Phoenix Connection. Designed by: <t title="Kanishka Ganguly">Nightstalker</t> | <t title="Nimesh Ghelani">Sephiroth</t> | <t title="Soham Chatterjee">ElementCode</t></p>
             </div>
         </div>
+
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
         <script src="anyslider/jquery.easing.1.3.js"></script>
         <script src="anyslider/jquery.anyslider.min.js"></script>
@@ -126,11 +127,12 @@ $_SESSION['loggedin'] = "NO";
             $(document).ready(function () {
                 $("#slider").AnySlider({
                     animation: "slide",
-                    interval: 3000,
+                    interval: 4000,
                     rtl: true,
                     showControls: false,
                     showOnHover: false,
-                    startSlide: 2
+                    startSlide: 2,
+                    touch: false
                 });
 		
             });

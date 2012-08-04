@@ -73,7 +73,8 @@ $_SESSION['loggedin'] = "NO";
                                 $result3 = mysql_query("SELECT ad_id FROM ad WHERE uid=" . $row['uid'] . ";");
                                 while ($row2 = mysql_fetch_assoc($result2)) {
                                     echo
-                                    '<tr>
+                                    '<a name="' . $row['ad_id'] . '"</a>
+                                        <tr>
                                         <td>' . wordwrap($row['ad_details'], 20) . '</td>
                                         <td>' . $row['ad_category'] . '</td>
                                         <td>' . $row2['fname'] . '</td>

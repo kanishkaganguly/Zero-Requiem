@@ -18,7 +18,7 @@
                         </form>
                     </p>
 
-                    <h1 class="logo"><a href="index.html">PHOENIX CONNEXIONS</a></h1>
+                    <h1 class="logo"><a href="index.php">PHOENIX CONNEXIONS</a></h1>
 
                     <ul>
                         <li><a href="index.php">Home</a></li>
