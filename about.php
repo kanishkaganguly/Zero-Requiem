@@ -57,6 +57,7 @@
                 <p> We are a start-up formed by three bored, jobless students of Computer Science and Engineering stream of B.I.T. Mesra.</p>
                 <p> A lack of female company in our lives (VERY TYPICAL OF ENGINEERING COLLEGES) made us while away our time in front of our computer screens.</p>
                 <p> We realized that our college lacks a one-stop shop for basic needs such as a <a href="advertisement.php">buy-sell portal</a>, <a href="phpBB3/index.php">discussion forums</a>, and much more...
+                    <p> So, here we present to you PHOENIX | CONNEXIONS </p>
             </div>
         </div>
         <div id="foot">

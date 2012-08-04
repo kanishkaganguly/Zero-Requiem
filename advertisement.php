@@ -84,7 +84,8 @@ $_SESSION['loggedin'] = "NO";
                                         <td> Rs. ' . $row['ad_price'] . '</td>
                                         <td>' . $row['ad_added'] . '</td>
                                         <td><img src="image_display.php?id=' . $row['ad_id'] . '" width="100" height="100"></td>
-                                   </tr>';
+                                   </tr>
+                                   ';
                                 }
                             };
                             ?>
