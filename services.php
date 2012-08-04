@@ -46,6 +46,10 @@
                                 <h5>The Discussion Forum</h5>
                                 <p>THE place to discuss about everything you may fancy, including movies, music, games, gadgets and whatnots. <a href="phpBB3/index.php">More</a></p>
                             </li>
+                            <li>
+                                <h5>The Chat Room</h5>
+                                <p>Connect in real-time with friends. Catch up on latest news, as it happens. Keep in touch. All of it, right here. <a href="phpfreechat/index.php">More</a></p>
+                            </li>
                         </ul>
                     </div>
                     <center> MUCH MORE TO COME. VERY SOON. </center>

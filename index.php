@@ -36,15 +36,27 @@ $_SESSION['loggedin'] = "NO";
                     <div id="slider" class="slider">
                         <section>
                             <?php
-                            for ($i = 1; $i < 6; $i++) {
-                                echo '<img src="slider_display.php?id=' . $i . '" width="150" height="150">';
+                            $con = mysql_connect("localhost", "root", "");
+                            if (!$con) {
+                                
+                            }
+                            mysql_select_db('zerorequiem');
+                            $slider_query = mysql_query("SELECT ad_id FROM ad ORDER BY ad_added LIMIT 0,5;");
+                            while ($set1 = mysql_fetch_assoc($slider_query)) {
+                                echo '<img src="slider_display.php?id=' . $set1['ad_id'] . '" width="150" height="150">';
                             }
                             ?>
                         </section>
                         <section>
                             <?php
-                            for ($j = 7; $j < 12; $j++) {
-                                echo '<img src="slider_display.php?id=' . $j . '" width="150" height="150">';
+                            $con = mysql_connect("localhost", "root", "");
+                            if (!$con) {
+                                
+                            }
+                            mysql_select_db('zerorequiem');
+                            $slider_query = mysql_query("SELECT ad_id FROM ad ORDER BY ad_added LIMIT 6,10;");
+                            while ($set2 = mysql_fetch_assoc($slider_query)) {
+                                echo '<img src="slider_display.php?id=' . $set2['ad_id'] . '" width="150" height="150">';
                             }
                             ?>
                         </section>
@@ -78,7 +90,7 @@ $_SESSION['loggedin'] = "NO";
                         <li>
                             <h3><span>other</span>Services</h3>
                             <p>Much More Inside</p>
-                            <p class="descrip">Feel free to explore our other services on offer including a news feed, an events reminder page and offers in town.</p>
+                            <p class="descrip">Feel free to explore our other services on offer including a <a href="phpfreechat/index.php">chat room</a>, a discussion forum and offers in town.</p>
                         </li>
                     </ul>
                 </div>

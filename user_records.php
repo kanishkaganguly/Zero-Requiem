@@ -119,6 +119,7 @@ if ($_SESSION['loggedin'] == "NO") {
                                 <td><span>Ad Category</span></td>
                                 <td><span>Ad Pricing</span></td>
                                 <td><span>Ad Added</span></td>
+                                <td><span>Remove Ad</span></td>
                             </tr>'
     .
     $con = mysql_connect("localhost", "root", "");
@@ -138,6 +139,7 @@ if ($_SESSION['loggedin'] == "NO") {
             echo '<td>' . $row['ad_category'] . '</td>';
             echo '<td>' . $row['ad_price'] . '</td>';
             echo '<td>' . $row['ad_added'] . '</td>';
+            echo '<td><a href=delete_records.php?id='.$row['ad_id'].'><input type="button" class="btn" value="REMOVE"></td>';
             echo '</tr>';
         }
     }
