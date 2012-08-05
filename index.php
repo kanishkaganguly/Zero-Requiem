@@ -44,6 +44,7 @@ $_SESSION['loggedin'] = "NO";
                         <li><a href="advertisement.php">Market</a></li>
                         <li><a href="about.php">About</a></li>
                     </ul>
+
                     <div id="slider" class="slider">
                         <section>
                             <?php
@@ -72,81 +73,83 @@ $_SESSION['loggedin'] = "NO";
                             ?>
                         </section>
                     </div>
+
                 </div>
             </div>
         </div>
-        <div id="content">
-            <div id="content_cen">
-                <div id="content_sup">
-                    <div id="ct_pan">
-                        THE PHOENIX CONNEXIONS
-                    </div>
-                    <div id="welcom_pan">
-                        <h2><span>PCONN</span>Introduction</h2>
-                        <a class="brochure" href="about.php"><span>ABOUT US</span></a>
-                        <p>A one stop solution for all your college needs.</p>
-                    </div>
-
-                    <ul id="infoPan">
-                        <li>
-                            <h3><span>market</span>Portal</h3>
-                            <p>Complete buying and selling portal</p>
-                            <p class="descrip">Just <a href="register.php">register</a> and start advertising your wares to a huge audience.</p>
-                        </li>
-                        <li>
-                            <h3><span>discussion</span>Forum</h3>
-                            <p>Online discussion portal</p>
-                            <p class="descrip">Just <a href ="phpBB3/index.php">login</a> and start talking about your favourite movies, games, technology, gadgets and much more.</p>
-                        </li>
-                        <li>
-                            <h3><span>other</span>Services</h3>
-                            <p>Much More Inside</p>
-                            <p class="descrip">Feel free to explore our other services on offer including a <a href="phpfreechat/index.php">chat room</a>, a discussion forum and offers in town.</p>
-                        </li>
-                    </ul>
+    <center><font color="white">FEATURED PRODUCTS</font></center> 
+    <div id="content">
+        <div id="content_cen">
+            <div id="content_sup">
+                <div id="ct_pan">
+                    THE PHOENIX CONNEXIONS
                 </div>
-            </div>
-        </div>
-        <div id="foot">
-            <div id="foot_cen">
-                <h6><a href="index.php">phoenix</a></h6>
-                <center>
-                    <ul>
-                        <li class="space"></li> <li class="space"></li>
-                        <li class="space"></li><li class="space"></li>
-                        <li class="space"></li><li class="space"></li>
-                        <li class="space"></li><li class="space"></li>
-                        <li class="space"></li><li class="space"></li>
-                        <li class="space"></li><li class="space"></li>
-                        <li><a href="index.php">HOME</a></li>
-                        <li class="space">|</li>
-                        <li><a href="about.php">ABOUT</a></li>
-                        <li class="space">|</li>
-                        <li><a href="services.php">SERVICES</a></li>
-                        <li class="space">|</li>
-                        <li><a href="advertisement.php">MARKET</a></li>
-                    </ul>
-                </center>
-                <p>© Phoenix Connection. Designed by: <t title="Kanishka Ganguly">Nightstalker</t> | <t title="Nimesh Ghelani">Sephiroth</t> | <t title="Soham Chatterjee">ElementCode</t></p>
-            </div>
-        </div>
+                <div id="welcom_pan">
+                    <h2><span>PCONN</span>Introduction</h2>
+                    <a class="brochure" href="about.php"><span>ABOUT US</span></a>
+                    <p>A one stop solution for all your college needs.</p>
+                </div>
 
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-        <script src="anyslider/jquery.easing.1.3.js"></script>
-        <script src="anyslider/jquery.anyslider.min.js"></script>
-        <script>
-            $(document).ready(function () {
-                $("#slider").AnySlider({
-                    animation: "slide",
-                    interval: 4000,
-                    rtl: true,
-                    showControls: false,
-                    showOnHover: false,
-                    startSlide: 2,
-                    touch: false
-                });
-		
+                <ul id="infoPan">
+                    <li>
+                        <h3><span>market</span>Portal</h3>
+                        <p>Complete buying and selling portal</p>
+                        <p class="descrip">Just <a href="register.php">register</a> and start advertising your wares to a huge audience.</p>
+                    </li>
+                    <li>
+                        <h3><span>discussion</span>Forum</h3>
+                        <p>Online discussion portal</p>
+                        <p class="descrip">Just <a href ="phpBB3/index.php">login</a> and start talking about your favourite movies, games, technology, gadgets and much more.</p>
+                    </li>
+                    <li>
+                        <h3><span>other</span>Services</h3>
+                        <p>Much More Inside</p>
+                        <p class="descrip">Feel free to explore our other services on offer including a <a href="phpfreechat/index.php">chat room</a>, a <a href="/phpbb3">discussion forum</a> and offers in town.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="foot">
+        <div id="foot_cen">
+            <h6><a href="index.php">phoenix</a></h6>
+            <center>
+                <ul>
+                    <li class="space"></li> <li class="space"></li>
+                    <li class="space"></li><li class="space"></li>
+                    <li class="space"></li><li class="space"></li>
+                    <li class="space"></li><li class="space"></li>
+                    <li class="space"></li><li class="space"></li>
+                    <li class="space"></li><li class="space"></li>
+                    <li><a href="index.php">HOME</a></li>
+                    <li class="space">|</li>
+                    <li><a href="about.php">ABOUT</a></li>
+                    <li class="space">|</li>
+                    <li><a href="services.php">SERVICES</a></li>
+                    <li class="space">|</li>
+                    <li><a href="advertisement.php">MARKET</a></li>
+                </ul>
+            </center>
+            <p>© Phoenix Connexion. Designed by: <t title="Kanishka Ganguly">Nightstalker</t> | <t title="Nimesh Ghelani">Sephiroth</t> | <t title="Soham Chatterjee">ElementCode</t></p>
+        </div>
+    </div>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="anyslider/jquery.easing.1.3.js"></script>
+    <script src="anyslider/jquery.anyslider.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#slider").AnySlider({
+                animation: "slide",
+                interval: 4000,
+                rtl: true,
+                showControls: false,
+                showOnHover: false,
+                startSlide: 2,
+                touch: false
             });
-        </script>
-    </body>
+		
+        });
+    </script>
+</body>
 </html>

@@ -1,3 +1,4 @@
+<?php session_start() ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
@@ -10,13 +11,24 @@
         <div id="head">
             <div id="head_cen">
                 <div id="head_sup" class="head_pad">
-                    <p class="search">
+                    <?php
+                    if ($_SESSION['loggedin'] === "YES") {
+                        echo '<p class="search">
+                      <form name = "logout" action = "/index.php" method = "link" class="search">
+                            <input type = "text" name = "login_name" VALUE = "' . $_SESSION['name'] . '" size = "15" disabled = "disabled" class="txt" />
+                            <a href="index.php"><input type = "submit" value = "LOGOUT" name = "login_submit" class="btn" /></a>
+                       </form>
+                    </p>';
+                    } else if ($_SESSION['loggedin'] === "NO") {
+                        echo '<p class="search">
                         <form name="login" action ="profile.php" method="POST" class="search">
-                            <input type="text" name ="login_name" class="txt" onfocus="if(this.value == 'Email') { this.value = ''; }" value='Email' size="15" />
-                            <input type="password" name ="login_pwd" class="txt" onfocus="if(this.value == 'Password') { this.value = ''; }" value='Password'  size="15" />
+                            <input type="text" name = "login_name" class="txt" onfocus="if(this.value == "Email") { this.value = ""; }" value="Email" size="15" />
+                            <input type="password" name = "login_pwd" class="txt" onfocus="if(this.value == "Password") { this.value = ""; }" value="Password"  size="15" />
                             <input type="submit" class="btn" value="LOGIN" name="login_submit" />
                         </form>
-                    </p>
+                    </p>';
+                    }
+                    ?>
 
                     <h1 class="logo"><a href="index.php">PHOENIX CONNEXIONS</a></h1>
 
@@ -44,11 +56,11 @@
                         </li>
                         <li>
                             <h3><span></span>Sephiroth<img src="about_sephiroth.gif" alt="" height="50" width="50"/></h3>
-                            <p>Level : Python Pro</p>
+                            <p>Level : Linux Pro</p>
                             <p class="descrip"></p>
                         </li>
                         <li>
-                            <h3><span></span><font size="5px">ElementCode</font><img src="about_elementcode.png" alt="" height="60" width="50"/></h3>
+                            <h3><span></span><font size="5px">ElementCode</font><img src="about_elementcode.jpg" alt="" height="60" width="50"/></h3>
                             <p>Level : JAVA Geek</p>
                             <p class="descrip"></p>
                         </li>
@@ -57,7 +69,8 @@
                 <p> We are a start-up formed by three bored, jobless students of Computer Science and Engineering stream of B.I.T. Mesra.</p>
                 <p> A lack of female company in our lives (VERY TYPICAL OF ENGINEERING COLLEGES) made us while away our time in front of our computer screens.</p>
                 <p> We realized that our college lacks a one-stop shop for basic needs such as a <a href="advertisement.php">buy-sell portal</a>, <a href="phpBB3/index.php">discussion forums</a>, and much more...
-                    <p> So, here we present to you PHOENIX | CONNEXIONS </p>
+
+                    <center><p> So, here we present to you PHOENIX | CONNEXIONS </p></center>
             </div>
         </div>
         <div id="foot">

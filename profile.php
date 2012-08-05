@@ -179,8 +179,8 @@ if (isset($_REQUEST['login_submit'])) {
                                     <td><input type="text" name="ad_date" value="' . date("Y\-m\-d") . '" disabled="disabled" class="txt"/></td>
                                 </tr>
                                 <tr>
-                                    <td><input type="submit" value="SUBMIT" name="ad_submit" class="btn"/></td>
                                     <td><input type="reset" value="RESET" name="ad_reset" class="btn"/></td>
+                                    <td><input type="submit" value="SUBMIT" name="ad_submit" class="btn"/></td>
                                 </tr>
                             </form>
                         </table>
