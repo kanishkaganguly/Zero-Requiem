@@ -90,7 +90,7 @@
                         $register_ip = ip2long($_SERVER['REMOTE_ADDR']);
                         $fname = ucfirst(strtolower($_REQUEST['register_fname']));
                         $lname = ucfirst(strtolower($_REQUEST['register_lname']));
-                        $branch = ucwords($_REQUEST['register_branch']);
+                        $branch = ucfirst(strtolower($_REQUEST['register_branch']));
                         $pass = md5($_REQUEST['register_password']);
                         $insert_table1 = "INSERT IGNORE INTO user (fname, lname, pwd, email, mob, hostel, room, branch, ip)VALUES('$fname','$lname','$pass','$_REQUEST[register_email]','$_REQUEST[register_mobile]','$_REQUEST[register_hostel]','$_REQUEST[register_room]','$branch','$register_ip')";
                         if (!mysql_query($insert_table1, $con)) {

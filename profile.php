@@ -162,6 +162,8 @@ if (isset($_REQUEST['login_submit'])) {
                                             <option>Electronics</option>
                                             <option>Household Items</option>
                                             <option>Services</option>
+                                            <option>Cycles</option>
+                                            <option>Stationery</option>
                                             <option>Others</option>
                                         </select>
                                    </td>
