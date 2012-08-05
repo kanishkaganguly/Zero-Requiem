@@ -31,7 +31,7 @@
                     </p>';
                     }
                     ?>
-                    <h1 class = "logo"><a href = "index.html">PHOENIX CONNEXIONS</a></h1>
+                    <h1 class = "logo"><a href = "index.php">PHOENIX CONNEXIONS</a></h1>
 
                     <ul>
                         <li><a href = "index.php">Home</a></li>
@@ -89,7 +89,7 @@
                         <li><a href = "advertisement.php">MARKET</a></li>
                     </ul>
                 </center>
-                <p>© Phoenix Connection. Designed by: <t title = "Kanishka Ganguly">Nightstalker</t> | <t title = "Nimesh Ghelani">Sephiroth</t> | <t title = "Soham Chatterjee">ElementCode</t></p>
+                <p>© Phoenix Connexion. Designed by: <t title = "Kanishka Ganguly">Nightstalker</t> | <t title = "Nimesh Ghelani">Sephiroth</t> | <t title = "Soham Chatterjee">ElementCode</t></p>
             </div>
         </div>
     </body>

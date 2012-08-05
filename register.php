@@ -152,8 +152,8 @@ and open the template in the editor.
                                     <td>&nbsp;</td>
                                 </tr>
                                 <tr>
-                                    <td><input type="submit" value="REGISTER" name="register_button" class="btn"/></td>
                                     <td><input type="reset" value="RESET" name="register_reset" class="btn"/></td>
+                                    <td><input type="submit" value="REGISTER" name="register_button" class="btn"/></td>
                                 </tr>
                             </form>
                         </table>

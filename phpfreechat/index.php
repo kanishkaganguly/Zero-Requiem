@@ -1,15 +1,7 @@
 <?php
 session_start();
 if ($_SESSION['loggedin'] === "NO") {
-    require_once dirname(__FILE__) . "/src/phpfreechat.class.php";
-    $params = array();
-    $params["title"] = "Phoenix | Connexions";
-    $params["nick"] = "guest" . rand(1, 1000);  // setup the intitial nickname
-    $params['firstisadmin'] = true;
-//$params["isadmin"] = true; // makes everybody admin: do not use it on production servers ;)
-    $params["serverid"] = md5(__FILE__); // calculate a unique id for this chat
-    $params["debug"] = false;
-    $chat = new phpFreeChat($params);
+    header('Location: /register.php');
 } else if ($_SESSION['loggedin'] === "YES") {
     require_once dirname(__FILE__) . "/src/phpfreechat.class.php";
     $params = array();

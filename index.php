@@ -53,7 +53,7 @@ $_SESSION['loggedin'] = "NO";
                                 
                             }
                             mysql_select_db('zerorequiem');
-                            $slider_query = mysql_query("SELECT ad_id FROM ad ORDER BY ad_added LIMIT 0,5;");
+                            $slider_query = mysql_query("SELECT * FROM ad ORDER BY ad_added LIMIT 0,5;");
                             while ($set1 = mysql_fetch_assoc($slider_query)) {
                                 echo '<a href="advertisement.php/#' . $set1['ad_id'] . '"><img src="slider_display.php?id=' . $set1['ad_id'] . '" width="150" height="150"></a>';
                             }
@@ -66,7 +66,7 @@ $_SESSION['loggedin'] = "NO";
                                 
                             }
                             mysql_select_db('zerorequiem');
-                            $slider_query = mysql_query("SELECT ad_id FROM ad ORDER BY ad_added LIMIT 6,10;");
+                            $slider_query = mysql_query("SELECT * FROM ad ORDER BY ad_added LIMIT 6,10;");
                             while ($set2 = mysql_fetch_assoc($slider_query)) {
                                 echo '<a href="advertisement.php/#' . $set2['ad_id'] . '"><img src="slider_display.php?id=' . $set2['ad_id'] . '" width="150" height="150"></a>';
                             }

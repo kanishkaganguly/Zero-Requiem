@@ -169,8 +169,8 @@ if (isset($_REQUEST['ad_submit'])) {
             $addetails = ucwords($_POST['ad_details']);
 
             if (isset($_FILES['ad_img']) && $_FILES['ad_img']['size'] <= 0) {
-                $fp = fopen('no-photo.jpg', 'r');
-                $data = fread($fp, filesize('no-photo.jpg'));
+                $fp = fopen('no-photo.png', 'r');
+                $data = fread($fp, filesize('no-photo.png'));
                 $image = addslashes($data);
                 fclose($fp);
             } else if (isset($_FILES['ad_img']) && $_FILES['ad_img']['size'] > 0) {
