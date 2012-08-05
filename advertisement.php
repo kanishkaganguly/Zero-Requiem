@@ -33,7 +33,7 @@ session_start();
                     }
                     ?>
 
-                    <h1 class="logo"><a href="index.html">PHOENIX CONNEXIONS</a></h1>
+                    <h1 class="logo"><a href="index.php">PHOENIX CONNEXIONS</a></h1>
                     <?php
                     if ($_SESSION['loggedin'] === "YES") {
                         echo '<ul>

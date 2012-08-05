@@ -68,7 +68,7 @@
                                 echo '<p> PLEASE CONTACT ADMIN </p>';
                                 return false;
                             } else {
-                                
+
                                 echo '<p> An email has been sent to your registered ID with the following details :</p>';
                                 echo '<p> Name : ' . ucfirst(strtolower($_REQUEST['register_fname'])) . ' ' . ucfirst(strtolower($_REQUEST['register_lname'])) . '</p>';
                                 echo '<p> Password : ' . $_REQUEST['register_password'] . '</p>';
@@ -90,7 +90,8 @@
                         $register_ip = ip2long($_SERVER['REMOTE_ADDR']);
                         $fname = ucfirst(strtolower($_REQUEST['register_fname']));
                         $lname = ucfirst(strtolower($_REQUEST['register_lname']));
-                        $insert_table1 = "INSERT IGNORE INTO user (fname, lname, pwd, email, mob, hostel, room, branch, ip)VALUES('$fname','$lname','$_REQUEST[register_password]','$_REQUEST[register_email]','$_REQUEST[register_mobile]','$_REQUEST[register_hostel]','$_REQUEST[register_room]','$_REQUEST[register_branch]','$register_ip')";
+                        $branch = ucwords($_REQUEST['register_branch']);
+                        $insert_table1 = "INSERT IGNORE INTO user (fname, lname, pwd, email, mob, hostel, room, branch, ip)VALUES('$fname','$lname','$_REQUEST[register_password]','$_REQUEST[register_email]','$_REQUEST[register_mobile]','$_REQUEST[register_hostel]','$_REQUEST[register_room]','$branch','$register_ip')";
                         if (!mysql_query($insert_table1, $con)) {
                             die('<h3> > ERROR </h3>
                         <p>PLEASE <a href = "mailto:kanishkaganguly2002@gmail.com">CONTACT</a> ADMIN. </p> ' . mysql_error());
