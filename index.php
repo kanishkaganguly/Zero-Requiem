@@ -88,6 +88,8 @@ $_SESSION['loggedin'] = "NO";
                     <h2><span>PCONN</span>Introduction</h2>
                     <a class="brochure" href="about.php"><span>ABOUT US</span></a>
                     <p>A one stop solution for all your college needs.</p>
+                    <p>This is quite literally a three-man show. So please forgive us for any errors and glitches whatsoever.</p>
+                    <p>We do work very hard to get things as near perfect as possible</p>
                 </div>
 
                 <ul id="infoPan">
