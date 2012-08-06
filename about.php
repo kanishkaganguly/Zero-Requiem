@@ -14,14 +14,14 @@
                     <?php
                     if ($_SESSION['loggedin'] === "YES") {
                         echo '<p class="search">
-                      <form name = "logout" action = "logout.php" method = "POST" class="search">
+                      <form name = "logout" action = "/phoenix/logout.php" method = "POST" class="search">
                             <input type = "text" name = "login_name" VALUE = "' . $_SESSION['name'] . '" size = "15" disabled = "disabled" class="txt" />
                             <input type = "submit" value = "LOGOUT" name = "logout_submit" class="btn" />
                        </form>
                     </p>';
                     } else if ($_SESSION['loggedin'] === "NO") {
                         echo '<p class="search">
-                        <form name="login" action ="login.php" method="POST" class="search">
+                        <form name="login" action ="/phoenix/login.php" method="POST" class="search">
                             <input type="text" name = "login_name" class="txt" onfocus="if(this.value == "Email") { this.value = ""; }" value="Email" size="15" />
                             <input type="password" name = "login_pwd" class="txt" onfocus="if(this.value == "Password") { this.value = ""; }" value="Password"  size="15" />
                             <input type="submit" class="btn" value="LOGIN" name="login_submit" />
@@ -68,14 +68,14 @@
                 </div>
                 <p> We are a start-up formed by three bored, jobless students of Computer Science and Engineering stream of B.I.T. Mesra.</p>
                 <p> A lack of female company in our lives (VERY TYPICAL OF ENGINEERING COLLEGES) made us while away our time in front of our computer screens.</p>
-                <p> We realized that our college lacks a one-stop shop for basic needs such as a <a href="advertisement.php">buy-sell portal</a>, <a href="phpBB3/index.php">discussion forums</a>, and much more...
+                <p> We realized that our college lacks a one-stop shop for basic needs such as a <a href="/phoenix/advertisement.php">buy-sell portal</a>, <a href="phpBB3/index.php">discussion forums</a>, and much more...
 
                     <center><p> So, here we present to you PHOENIX | CONNEXIONS </p></center>
             </div>
         </div>
         <div id="foot">
             <div id="foot_cen">
-                <h6><a href="index.php">phoenix</a></h6>
+                <h6><a href="/phoenix/index.php">phoenix</a></h6>
                 <center>
                     <ul>
                         <li class="space"></li> <li class="space"></li>

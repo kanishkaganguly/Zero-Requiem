@@ -24,7 +24,7 @@ session_start();
                     </p>';
                     } else if ($_SESSION['loggedin'] === "NO") {
                         echo '<p class="search">
-                        <form name="login" action ="login.php" method="POST" class="search">
+                        <form name="login" action ="/phoenix/login.php" method="POST" class="search">
                             <input type="text" name = "login_name" class="txt" onfocus="if(this.value == "Email") { this.value = ""; }" value="Email" size="15" />
                             <input type="password" name = "login_pwd" class="txt" onfocus="if(this.value == "Password") { this.value = ""; }" value="Password"  size="15" />
                             <input type="submit" class="btn" value="LOGIN" name="login_submit" />
@@ -37,17 +37,17 @@ session_start();
                     <?php
                     if ($_SESSION['loggedin'] === "YES") {
                         echo '<ul>
-                                <li><a href="/index.php">Home</a></li>
-                                <li><a class="active" href="/advertisement.php">Market</a></li>
-                                <li><a href="/profile.php">Profile</a></li>
-                                <li><a href="/about.php">About</a></li>
+                                <li><a href="/phoenix/index.php">Home</a></li>
+                                <li><a class="active" href="/phoenix/advertisement.php">Market</a></li>
+                                <li><a href="/phoenix/profile.php">Profile</a></li>
+                                <li><a href="/phoenix/about.php">About</a></li>
                             </ul>';
                     } else if ($_SESSION['loggedin'] === "NO") {
                         echo '<ul>
-                                <li><a href="/index.php">Home</a></li>
-                                <li><a href="/register.php">Sign Up</a></li>
-                                <li><a class="active" href="/advertisement.php">Market</a></li>
-                                <li><a href="/about.php">About</a></li>
+                                <li><a href="/phoenix/index.php">Home</a></li>
+                                <li><a href="/phoenix/register.php">Sign Up</a></li>
+                                <li><a class="active" href="/phoenix/advertisement.php">Market</a></li>
+                                <li><a href="/phoenix/about.php">About</a></li>
                             </ul>';
                     }
                     ?>
@@ -119,7 +119,7 @@ session_start();
                         $total_pages = ceil($total_records / 20);
 
                         for ($i = 1; $i <= $total_pages; $i++) {
-                            echo "<br><br><br><span>Page : <a href='advertisement.php?page=" . $i . "'>" . $i . "</a></span> ";
+                            echo "<br><br><br><span>Page : <a href='/phoenix/advertisement.php?page=" . $i . "'>" . $i . "</a></span> ";
                         }
                         ?>
                     </div>
@@ -128,7 +128,7 @@ session_start();
         </div>
         <div id="foot">
             <div id="foot_cen">
-                <h6><a href="index.php">phoenix</a></h6>
+                <h6><a href="/phoenix/index.php">phoenix</a></h6>
                 <center>
                     <ul>
                         <li class="space"></li> <li class="space"></li>
@@ -137,13 +137,13 @@ session_start();
                         <li class="space"></li><li class="space"></li>
                         <li class="space"></li><li class="space"></li>
                         <li class="space"></li><li class="space"></li>
-                        <li><a href="/index.php">HOME</a></li>
+                        <li><a href="/phoenix/index.php">HOME</a></li>
                         <li class="space">|</li>
-                        <li><a href="/about.php">ABOUT</a></li>
+                        <li><a href="/phoenix/about.php">ABOUT</a></li>
                         <li class="space">|</li>
-                        <li><a href="/services.php">SERVICES</a></li>
+                        <li><a href="/phoenix/services.php">SERVICES</a></li>
                         <li class="space">|</li>
-                        <li><a href="/advertisement.php">MARKET</a></li>
+                        <li><a href="/phoenix/advertisement.php">MARKET</a></li>
                     </ul>
                 </center>
                 <p>© Phoenix Connection. Designed by: <t title="Kanishka Ganguly">Nightstalker</t> | <t title="Nimesh Ghelani">Sephiroth</t> | <t title="Soham Chatterjee">ElementCode</t></p>

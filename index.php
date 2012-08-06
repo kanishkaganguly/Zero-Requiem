@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <?php
 session_start();
+$count = 0;
+if ($count == 0) {
+    $_SESSION['loggedin'] = "NO";
+} else {
+    
+}
 ?>
 
 <html>
@@ -20,14 +26,14 @@ session_start();
                     <?php
                     if ($_SESSION['loggedin'] === "YES") {
                         echo '<p class="search">
-                      <form name = "logout" action = "logout.php" method = "POST" class="search">
+                      <form name = "logout" action = "/phoenix/logout.php" method = "POST" class="search">
                             <input type = "text" name = "login_name" VALUE = "' . $_SESSION['name'] . '" size = "15" disabled = "disabled" class="txt" />
                             <input type = "submit" value = "LOGOUT" name = "logout_submit" class="btn" />
                        </form>
                     </p>';
                     } else if ($_SESSION['loggedin'] === "NO") {
                         echo '<p class="search">
-                        <form name="login" action ="login.php" method="POST" class="search">
+                        <form name="login" action ="/phoenix/login.php" method="POST" class="search">
                             <input type="text" name = "login_name" class="txt" onfocus="if(this.value == "Email") { this.value = ""; }" value="Email" size="15" />
                             <input type="password" name = "login_pwd" class="txt" onfocus="if(this.value == "Password") { this.value = ""; }" value="Password"  size="15" />
                             <input type="submit" class="btn" value="LOGIN" name="login_submit" />
@@ -36,13 +42,13 @@ session_start();
                     }
                     ?>
 
-                    <h1 class="logo"><a href="index.php">PHOENIX CONNEXIONS</a></h1>
+                    <h1 class="logo"><a href="/phoenix/index.php">PHOENIX CONNEXIONS</a></h1>
 
                     <ul>
-                        <li><a class="active" href="index.php">Home</a></li>
-                        <li><a href="register.php">Sign Up</a></li>
-                        <li><a href="advertisement.php">Market</a></li>
-                        <li><a href="about.php">About</a></li>
+                        <li><a class="active" href="/phoenix/index.php">Home</a></li>
+                        <li><a href="/phoenix/register.php">Sign Up</a></li>
+                        <li><a href="/phoenix/advertisement.php">Market</a></li>
+                        <li><a href="/phoenix/about.php">About</a></li>
                     </ul>
 
                     <div id="slider" class="slider">
@@ -55,7 +61,7 @@ session_start();
                             mysql_select_db('zerorequiem');
                             $slider_query = mysql_query("SELECT * FROM ad ORDER BY ad_added LIMIT 0,5;");
                             while ($set1 = mysql_fetch_assoc($slider_query)) {
-                                echo '<a href="/advertisement.php/#' . $set1['ad_id'] . '"><img src="slider_display.php?id=' . $set1['ad_id'] . '" width="150" height="150"></a>';
+                                echo '<img src="slider_display.php?id=' . $set1['ad_id'] . '" width="150" height="150">';
                             }
                             ?>
                         </section>
@@ -68,7 +74,7 @@ session_start();
                             mysql_select_db('zerorequiem');
                             $slider_query2 = mysql_query("SELECT * FROM ad ORDER BY ad_added LIMIT 5,5;");
                             while ($set2 = mysql_fetch_assoc($slider_query2)) {
-                                echo '<a href="/advertisement.php/#' . $set2['ad_id'] . '"><img src="slider_display.php?id=' . $set2['ad_id'] . '" width="150" height="150"></a>';
+                                echo '<img src="slider_display.php?id=' . $set2['ad_id'] . '" width="150" height="150">';
                             }
                             ?>
                         </section>
@@ -86,7 +92,7 @@ session_start();
                 </div>
                 <div id="welcom_pan">
                     <h2><span>PCONN</span>Introduction</h2>
-                    <a class="brochure" href="about.php"><span>ABOUT US</span></a>
+                    <a class="brochure" href="/phoenix/about.php"><span>ABOUT US</span></a>
                     <p>A one stop solution for all your college needs.</p>
                     <p>This is quite literally a three-man show. So please forgive us for any errors and glitches whatsoever.</p>
                     <p>We do work very hard to get things as near perfect as possible</p>
@@ -96,7 +102,7 @@ session_start();
                     <li>
                         <h3><span>market</span>Portal</h3>
                         <p>Complete buying and selling portal</p>
-                        <p class="descrip">Just <a href="register.php">register</a> and start advertising your wares to a huge audience.</p>
+                        <p class="descrip">Just <a href="/phoenix/register.php">register</a> and start advertising your wares to a huge audience.</p>
                     </li>
                     <li>
                         <h3><span>discussion</span>Forum</h3>
@@ -114,7 +120,7 @@ session_start();
     </div>
     <div id="foot">
         <div id="foot_cen">
-            <h6><a href="index.php">phoenix</a></h6>
+            <h6><a href="/phoenix/index.php">phoenix</a></h6>
             <center>
                 <ul>
                     <li class="space"></li> <li class="space"></li>
@@ -123,13 +129,13 @@ session_start();
                     <li class="space"></li><li class="space"></li>
                     <li class="space"></li><li class="space"></li>
                     <li class="space"></li><li class="space"></li>
-                    <li><a href="index.php">HOME</a></li>
+                    <li><a href="/phoenix/index.php">HOME</a></li>
                     <li class="space">|</li>
-                    <li><a href="about.php">ABOUT</a></li>
+                    <li><a href="/phoenix/about.php">ABOUT</a></li>
                     <li class="space">|</li>
-                    <li><a href="services.php">SERVICES</a></li>
+                    <li><a href="/phoenix/services.php">SERVICES</a></li>
                     <li class="space">|</li>
-                    <li><a href="advertisement.php">MARKET</a></li>
+                    <li><a href="/phoenix/advertisement.php">MARKET</a></li>
                 </ul>
             </center>
             <p>© Phoenix Connexion. Designed by: <t title="Kanishka Ganguly">Nightstalker</t> | <t title="Nimesh Ghelani">Sephiroth</t> | <t title="Soham Chatterjee">ElementCode</t></p>
@@ -143,11 +149,11 @@ session_start();
         $(document).ready(function () {
             $("#slider").AnySlider({
                 animation: "slide",
-                interval: 2000,
+                interval: 4000,
                 rtl: true,
                 showControls: false,
                 showOnHover: false,
-                startSlide: 1
+                startSlide: 2
             });
 		
         });

@@ -17,7 +17,7 @@ if ($_SESSION['loggedin'] === "NO") {
             <div id="head_cen">
                 <div id="head_sup" class="head_pad">
                     <p class="search">
-                        <form name="login" action ="login.php" method="POST" class="search">
+                        <form name="login" action ="/phoenix/login.php" method="POST" class="search">
                             <input type="text" name = "login_name" class="txt" onfocus="if(this.value == "Email") { this.value = ""; }" value="Email" size="15" />
                             <input type="password" name = "login_pwd" class="txt" onfocus="if(this.value == "Password") { this.value = ""; }" value="Password"  size="15" />
                             <input type="submit" class="btn" value="LOGIN" name="login_submit" />
@@ -27,10 +27,10 @@ if ($_SESSION['loggedin'] === "NO") {
                     <h1 class="logo"><a href="index.html">PHOENIX CONNEXIONS</a></h1>
 
                     <ul>
-                        <li><a href="index.php">Home</a></li>
-                        <li><a href="advertisement.php">Market</a></li>
-                        <li><a class="active" href="register.php">Profile</a></li>
-                        <li><a href="about.php">About</a></li>
+                        <li><a href="/phoenix/index.php">Home</a></li>
+                        <li><a href="/phoenix/advertisement.php">Market</a></li>
+                        <li><a class="active" href="/phoenix/register.php">Profile</a></li>
+                        <li><a href="/phoenix/about.php">About</a></li>
                     </ul>
                 </div>
             </div>
@@ -44,14 +44,14 @@ if ($_SESSION['loggedin'] === "NO") {
                     </div>
                      <div id="service_pan">
                      <p>There has been an error in logging in. Please enter correct username and/or password.</p>
-                     <p>Register <a href="register.php">here</a> to use our services.</p>
+                     <p>Register <a href="/phoenix/register.php">here</a> to use our services.</p>
                      </div>
                 </div>
             </div>
        </div>         
        <div id="foot">
         <div id="foot_cen">
-            <h6><a href="index.php">phoenix</a></h6>
+            <h6><a href="/phoenix/index.php">phoenix</a></h6>
             <center>
                 <ul>
                     <li class="space"></li> <li class="space"></li>
@@ -60,13 +60,13 @@ if ($_SESSION['loggedin'] === "NO") {
                     <li class="space"></li><li class="space"></li>
                     <li class="space"></li><li class="space"></li>
                     <li class="space"></li><li class="space"></li>
-                    <li><a href="index.php">HOME</a></li>
+                    <li><a href="/phoenix/index.php">HOME</a></li>
                     <li class="space">|</li>
-                    <li><a href="about.php">ABOUT</a></li>
+                    <li><a href="/phoenix/about.php">ABOUT</a></li>
                     <li class="space">|</li>
-                    <li><a href="services.php">SERVICES</a></li>
+                    <li><a href="/phoenix/services.php">SERVICES</a></li>
                     <li class="space">|</li>
-                    <li><a href="advertisement.php">MARKET</a></li>
+                    <li><a href="/phoenix/advertisement.php">MARKET</a></li>
                 </ul>
             </center>
             <p>© Phoenix Connection. Designed by: <t title="Kanishka Ganguly">Nightstalker</t> | <t title="Nimesh Ghelani">Sephiroth</t> | <t title="Soham Chatterjee">ElementCode</t></p>
@@ -112,19 +112,19 @@ if ($_SESSION['loggedin'] === "NO") {
             <div id="head_cen">
                 <div id="head_sup" class="head_pad">
                     <p class="search">
-                      <form name = "logout" action = "logout.php" method = "POST" class="search">
+                      <form name = "logout" action = "/phoenix/logout.php" method = "POST" class="search">
                             <input type = "text" name = "login_name" VALUE = "' . $_SESSION['name'] . '" size = "15" disabled = "disabled" class="txt" />
                             <input type = "submit" value = "LOGOUT" name = "logout_submit" class="btn" />
                        </form>
                     </p>
 
-                    <h1 class="logo"><a href="index.html">PHOENIX CONNEXIONS</a></h1>
+                    <h1 class="logo"><a href="/phoenix/index.html">PHOENIX CONNEXIONS</a></h1>
 
                     <ul>
-                        <li><a href="index.php">Home</a></li>
-                        <li><a href="advertisement.php">Market</a></li>
+                        <li><a href="/phoenix/index.php">Home</a></li>
+                        <li><a href="/phoenix/advertisement.php">Market</a></li>
                         <li><a class="active" href="#">Profile</a></li>
-                        <li><a href="user_records.php">History</a></li>
+                        <li><a href="/phoenix/user_records.php">History</a></li>
                     </ul>
                 </div>
             </div>
@@ -138,7 +138,7 @@ if ($_SESSION['loggedin'] === "NO") {
                     </div>
                     <div id="service_pan">
                         <table>
-                            <form name="post_ads" enctype = "multipart/form-data" action = "post_success.php"  method = "POST" onSubmit="return validateForm()">
+                            <form name="post_ads" enctype = "multipart/form-data" action = "/phoenix/post_success.php"  method = "POST" onSubmit="return validateForm()">
                                 <tr>
                                     <td>Advertisement Details</td>
                                     <td><input type="text" class="txt" name="ad_details" value="" size="50" /></td>
@@ -184,7 +184,7 @@ if ($_SESSION['loggedin'] === "NO") {
         </div>
                  <div id="foot">
             <div id="foot_cen">
-                <h6><a href="index.php">phoenix</a></h6>
+                <h6><a href="/phoenix/index.php">phoenix</a></h6>
                 <center>
                     <ul>
                         <li class="space"></li> <li class="space"></li>
@@ -193,13 +193,13 @@ if ($_SESSION['loggedin'] === "NO") {
                         <li class="space"></li><li class="space"></li>
                         <li class="space"></li><li class="space"></li>
                         <li class="space"></li><li class="space"></li>
-                        <li><a href="index.php">HOME</a></li>
+                        <li><a href="/phoenix/index.php">HOME</a></li>
                         <li class="space">|</li>
-                        <li><a href="about.php">ABOUT</a></li>
+                        <li><a href="/phoenix/about.php">ABOUT</a></li>
                         <li class="space">|</li>
-                        <li><a href="services.php">SERVICES</a></li>
+                        <li><a href="/phoenix/services.php">SERVICES</a></li>
                         <li class="space">|</li>
-                        <li><a href="advertisement.php">MARKET</a></li>
+                        <li><a href="/phoenix/advertisement.php">MARKET</a></li>
                     </ul>
                 </center>
                 <p>© Phoenix Connection. Designed by: <t title="Kanishka Ganguly">Nightstalker</t> | <t title="Nimesh Ghelani">Sephiroth</t> | <t title="Soham Chatterjee">ElementCode</t></p>

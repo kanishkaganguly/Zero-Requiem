@@ -15,5 +15,5 @@ if (isset($_REQUEST['login_submit'])) {
         $_SESSION['pass'] = $pass;
     }
 }
-header("Location: profile.php");
+header("Location: /phoenix/profile.php");
 ?>
