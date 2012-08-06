@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <?php
 session_start();
-$_SESSION['loggedin'] = "NO";
 ?>
+
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -20,9 +20,9 @@ $_SESSION['loggedin'] = "NO";
                     <?php
                     if ($_SESSION['loggedin'] === "YES") {
                         echo '<p class="search">
-                      <form name = "logout" action = "index.php" method = "link" class="search">
+                      <form name = "logout" action = "logout.php" method = "POST" class="search">
                             <input type = "text" name = "login_name" VALUE = "' . $_SESSION['name'] . '" size = "15" disabled = "disabled" class="txt" />
-                            <a href="index.php"><input type = "submit" value = "LOGOUT" name = "login_submit" class="btn" /></a>
+                            <input type = "submit" value = "LOGOUT" name = "logout_submit" class="btn" />
                        </form>
                     </p>';
                     } else if ($_SESSION['loggedin'] === "NO") {
@@ -55,20 +55,20 @@ $_SESSION['loggedin'] = "NO";
                             mysql_select_db('zerorequiem');
                             $slider_query = mysql_query("SELECT * FROM ad ORDER BY ad_added LIMIT 0,5;");
                             while ($set1 = mysql_fetch_assoc($slider_query)) {
-                                echo '<a href="advertisement.php/#' . $set1['ad_id'] . '"><img src="slider_display.php?id=' . $set1['ad_id'] . '" width="150" height="150"></a>';
+                                echo '<a href="/advertisement.php/#' . $set1['ad_id'] . '"><img src="slider_display.php?id=' . $set1['ad_id'] . '" width="150" height="150"></a>';
                             }
                             ?>
                         </section>
                         <section>
                             <?php
-                            $con = mysql_connect("localhost", "root", "");
-                            if (!$con) {
+                            $con2 = mysql_connect("localhost", "root", "");
+                            if (!$con2) {
                                 
                             }
                             mysql_select_db('zerorequiem');
-                            $slider_query = mysql_query("SELECT * FROM ad ORDER BY ad_added LIMIT 6,9;");
-                            while ($set2 = mysql_fetch_assoc($slider_query)) {
-                                echo '<a href="advertisement.php/#' . $set2['ad_id'] . '"><img src="slider_display.php?id=' . $set2['ad_id'] . '" width="150" height="150"></a>';
+                            $slider_query2 = mysql_query("SELECT * FROM ad ORDER BY ad_added LIMIT 5,5;");
+                            while ($set2 = mysql_fetch_assoc($slider_query2)) {
+                                echo '<a href="/advertisement.php/#' . $set2['ad_id'] . '"><img src="slider_display.php?id=' . $set2['ad_id'] . '" width="150" height="150"></a>';
                             }
                             ?>
                         </section>
@@ -143,12 +143,11 @@ $_SESSION['loggedin'] = "NO";
         $(document).ready(function () {
             $("#slider").AnySlider({
                 animation: "slide",
-                interval: 4000,
+                interval: 2000,
                 rtl: true,
                 showControls: false,
                 showOnHover: false,
-                startSlide: 2,
-                touch: false
+                startSlide: 1
             });
 		
         });

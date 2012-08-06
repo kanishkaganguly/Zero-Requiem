@@ -17,9 +17,9 @@ session_start();
                     <?php
                     if ($_SESSION['loggedin'] === "YES") {
                         echo '<p class="search">
-                      <form name = "logout" action = "index.php" method = "link" class="search">
+                      <form name = "logout" action = "/logout.php" method = "POST" class="search">
                             <input type = "text" name = "login_name" VALUE = "' . $_SESSION['name'] . '" size = "15" disabled = "disabled" class="txt" />
-                            <a href="index.php"><input type = "submit" value = "LOGOUT" name = "login_submit" class="btn" /></a>
+                            <input type = "submit" value = "LOGOUT" name = "logout_submit" class="btn" />
                        </form>
                     </p>';
                     } else if ($_SESSION['loggedin'] === "NO") {
@@ -33,21 +33,21 @@ session_start();
                     }
                     ?>
 
-                    <h1 class="logo"><a href="index.php">PHOENIX CONNEXIONS</a></h1>
+                    <h1 class="logo"><a href="/index.php">PHOENIX CONNEXIONS</a></h1>
                     <?php
                     if ($_SESSION['loggedin'] === "YES") {
                         echo '<ul>
-                                <li><a href="index.php">Home</a></li>
-                                <li><a class="active" href="advertisement.php">Market</a></li>
-                                <li><a href="profile.php">Profile</a></li>
-                                <li><a href="about.php">About</a></li>
+                                <li><a href="/index.php">Home</a></li>
+                                <li><a class="active" href="/advertisement.php">Market</a></li>
+                                <li><a href="/profile.php">Profile</a></li>
+                                <li><a href="/about.php">About</a></li>
                             </ul>';
                     } else if ($_SESSION['loggedin'] === "NO") {
                         echo '<ul>
-                                <li><a href="index.php">Home</a></li>
-                                <li><a href="register.php">Sign Up</a></li>
-                                <li><a class="active" href="advertisement.php">Market</a></li>
-                                <li><a href="about.php">About</a></li>
+                                <li><a href="/index.php">Home</a></li>
+                                <li><a href="/register.php">Sign Up</a></li>
+                                <li><a class="active" href="/advertisement.php">Market</a></li>
+                                <li><a href="/about.php">About</a></li>
                             </ul>';
                     }
                     ?>
@@ -91,10 +91,10 @@ session_start();
                             <?php
                             while ($row = mysql_fetch_assoc($result)) {
                                 $result2 = mysql_query("SELECT * FROM user WHERE uid=" . $row['uid'] . ";");
-                                $result3 = mysql_query("SELECT ad_id FROM ad WHERE uid=" . $row['uid'] . ";");
+                                //$result3 = mysql_query("SELECT ad_id FROM ad WHERE uid=" . $row['uid'] . ";");
                                 while ($row2 = mysql_fetch_assoc($result2)) {
                                     echo
-                                    '<a name="' . $row['ad_id'] . '"</a>
+                                    '<a name="' . $row['ad_id'] . '"></a>
                                         <tr>
                                         <td>' . wordwrap($row['ad_details'], 20) . '</td>
                                         <td>' . $row['ad_category'] . '</td>
@@ -137,13 +137,13 @@ session_start();
                         <li class="space"></li><li class="space"></li>
                         <li class="space"></li><li class="space"></li>
                         <li class="space"></li><li class="space"></li>
-                        <li><a href="index.php">HOME</a></li>
+                        <li><a href="/index.php">HOME</a></li>
                         <li class="space">|</li>
-                        <li><a href="about.php">ABOUT</a></li>
+                        <li><a href="/about.php">ABOUT</a></li>
                         <li class="space">|</li>
-                        <li><a href="services.php">SERVICES</a></li>
+                        <li><a href="/services.php">SERVICES</a></li>
                         <li class="space">|</li>
-                        <li><a href="advertisement.php">MARKET</a></li>
+                        <li><a href="/advertisement.php">MARKET</a></li>
                     </ul>
                 </center>
                 <p>© Phoenix Connection. Designed by: <t title="Kanishka Ganguly">Nightstalker</t> | <t title="Nimesh Ghelani">Sephiroth</t> | <t title="Soham Chatterjee">ElementCode</t></p>

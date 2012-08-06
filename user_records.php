@@ -87,9 +87,9 @@ if ($_SESSION['loggedin'] == "NO") {
             <div id="head_cen">
                 <div id="head_sup" class="head_pad">
                     <p class="search">
-                      <form name = "logout" action = "index.php" method = "link" class="search">
+                      <form name = "logout" action = "logout.php" method = "POST" class="search">
                             <input type = "text" name = "login_name" VALUE = "' . $_SESSION['name'] . '" size = "15" disabled = "disabled" class="txt" />
-                            <a href="index.php"><input type = "submit" value = "LOGOUT" name = "login_submit" class="btn" /></a>
+                            <input type = "submit" value = "LOGOUT" name = "logout_submit" class="btn" />
                        </form>
                     </p>
 
