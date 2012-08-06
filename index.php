@@ -1,11 +1,8 @@
-<!DOCTYPE html>
 <?php
 session_start();
-$count = 0;
-if ($count == 0) {
+$_SESSION['count'] = 0;
+if ($_SESSION['count'] == 0) {
     $_SESSION['loggedin'] = "NO";
-} else {
-    
 }
 ?>
 
