@@ -89,7 +89,7 @@ session_start();
                             $page = 1;
                         };
                         $start_from = ($page - 1) * 20;
-                        $result = mysql_query("SELECT * FROM ad WHERE ad_approved = 1 ORDER BY ad_added;");
+                        $result = mysql_query("SELECT * FROM ad WHERE ad_approved = 1 AND ad_category= \"" . $_POST['search_ads'] . "\" ORDER BY ad_added;");
                         ?>
                         <table>
                             <tr>
