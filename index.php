@@ -20,14 +20,14 @@ $_SESSION['loggedin'] = "NO";
                     <?php
                     if ($_SESSION['loggedin'] === "YES") {
                         echo '<p class="search">
-                      <form name = "logout" action = "/index.php" method = "link" class="search">
+                      <form name = "logout" action = "index.php" method = "link" class="search">
                             <input type = "text" name = "login_name" VALUE = "' . $_SESSION['name'] . '" size = "15" disabled = "disabled" class="txt" />
                             <a href="index.php"><input type = "submit" value = "LOGOUT" name = "login_submit" class="btn" /></a>
                        </form>
                     </p>';
                     } else if ($_SESSION['loggedin'] === "NO") {
                         echo '<p class="search">
-                        <form name="login" action ="profile.php" method="POST" class="search">
+                        <form name="login" action ="login.php" method="POST" class="search">
                             <input type="text" name = "login_name" class="txt" onfocus="if(this.value == "Email") { this.value = ""; }" value="Email" size="15" />
                             <input type="password" name = "login_pwd" class="txt" onfocus="if(this.value == "Password") { this.value = ""; }" value="Password"  size="15" />
                             <input type="submit" class="btn" value="LOGIN" name="login_submit" />
@@ -66,7 +66,7 @@ $_SESSION['loggedin'] = "NO";
                                 
                             }
                             mysql_select_db('zerorequiem');
-                            $slider_query = mysql_query("SELECT * FROM ad ORDER BY ad_added LIMIT 6,10;");
+                            $slider_query = mysql_query("SELECT * FROM ad ORDER BY ad_added LIMIT 6,9;");
                             while ($set2 = mysql_fetch_assoc($slider_query)) {
                                 echo '<a href="advertisement.php/#' . $set2['ad_id'] . '"><img src="slider_display.php?id=' . $set2['ad_id'] . '" width="150" height="150"></a>';
                             }

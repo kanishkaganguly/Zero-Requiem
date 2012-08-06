@@ -1,10 +1,11 @@
 <?php
 
 session_start();
-if ($_SESSION['loggedin'] == "NO") {
-    echo'  <html>
+if ($_SESSION['loggedin'] === "NO") {
+    echo '
+    <html>
             <head>
-                 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+                <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
                 <link rel="stylesheet" type="text/css" href="/css/styles.css" media="screen"/>
                 <link href="http://fonts.googleapis.com/css?family=Abel" rel="stylesheet" type="text/css" />
                 <link rel="stylesheet" href="jquery-anyslider.css">
@@ -12,7 +13,7 @@ if ($_SESSION['loggedin'] == "NO") {
             </head>
             
         <body>
-               <div id="head">
+        <div id="head">
             <div id="head_cen">
                 <div id="head_sup" class="head_pad">
                     <p class="search">
@@ -73,17 +74,41 @@ if ($_SESSION['loggedin'] == "NO") {
     </div>
         </body>
     </html>';
-} else if ($_SESSION['loggedin'] == "YES") {
-    echo'  <html>
+} else if ($_SESSION['loggedin'] === "YES") {
+    echo '<html>
             <head>
                 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
                 <link rel="stylesheet" type="text/css" href="/css/styles.css" media="screen"/>
                 <link rel="stylesheet" href="jquery-anyslider.css">
                 <title>PHOENIX | CONNEXIONS</title>
+                <script type="text/javascript">
+                    function validateForm()
+                    {
+                        var a = (document.forms["post_ads"]["ad_details"].value);
+                        if (a==null || a=="")
+                        {
+                            document.forms["post_ads"]["ad_details"].focus();
+                            alert("Ad details must be filled out");
+                            return false;
+                        }
+                        var b = (document.forms["post_ads"]["ad_img"].value.length);
+                        if (b==""|| b==null)
+                        {
+                            
+                        }
+                        var c = (document.forms["post_ads"]["ad_price"].value);
+                        if (c==null || c=="")
+                        {
+                            document.forms["post_ads"]["ad_price"].focus();
+                            alert("Ad Price must be uploaded out");
+                            return false;
+                        }
+                    }
+                </script>
             </head>
             
-        <body>
-               <div id="head">
+            <body>
+        <div id="head">
             <div id="head_cen">
                 <div id="head_sup" class="head_pad">
                     <p class="search">
@@ -98,60 +123,66 @@ if ($_SESSION['loggedin'] == "NO") {
                     <ul>
                         <li><a href="index.php">Home</a></li>
                         <li><a href="advertisement.php">Market</a></li>
-                        <li><a class="active" href="user_records.php">History</a></li>
-                        <li><a href="about.php">About</a></li>
-                        
+                        <li><a class="active" href="#">Profile</a></li>
+                        <li><a href="user_records.php">History</a></li>
                     </ul>
                 </div>
             </div>
         </div>
-                   <div id="content">
+       <div id="content">
             <div id="content_cen">
                 <div id="content_sup" class="head_pad">
                     <div id="welcom_pan">
-                        <h2><span>' . $_SESSION['name'] . '</span>TRANSACTION HISTORY</h2>
-                        <p>The following is your transaction history </p>
+                        <h2><span>' . $_SESSION['name'] . '</span>LOGGED IN</h2>
+                        <p>You are now logged in to PHOENIX CONNEXIONS</p>
                     </div>
-                        
+                    <div id="service_pan">
                         <table>
-                            <tr>
-                                <td><span>Ad Details</span></td>
-                                <td><span>Ad Category</span></td>
-                                <td><span>Ad Pricing</span></td>
-                                <td><span>Ad Added</span></td>
-                                <td><span>Remove Ad</span></td>
-                            </tr>'
-    .
-    $con = mysql_connect("localhost", "root", "");
-    if (!$con) {
-        die('COULD NOT CONNECT' . mysql_error());
-    } else {
-        mysql_select_db("zerorequiem");
-
-        $get_uid = mysql_query("SELECT * FROM user WHERE email = '{$_SESSION['name']}' AND pwd = '{$_SESSION['pass']}'");
-        $row2 = mysql_fetch_array($get_uid);
-        $uid = $row2['uid'];
-        $sql_query = "SELECT * FROM ad WHERE uid=" . $uid . " ORDER BY ad_added;";
-        $mysql2 = mysql_query($sql_query);
-        while ($row = mysql_fetch_array($mysql2, MYSQL_ASSOC)) {
-            echo '<tr>';
-            echo '<td>' . wordwrap($row['ad_details'], 20) . '</td>';
-            echo '<td>' . $row['ad_category'] . '</td>';
-            echo '<td>' . $row['ad_price'] . '</td>';
-            echo '<td>' . $row['ad_added'] . '</td>';
-            echo '<td><a href=delete_records.php?id=' . $row['ad_id'] . '><input type="button" class="btn" value="REMOVE"></td>';
-            echo '</tr>';
-        }
-    }
-
-    '</table>
-                        </div>
+                            <form name="post_ads" enctype = "multipart/form-data" action = "post_success.php"  method = "POST" onSubmit="return validateForm()">
+                                <tr>
+                                    <td>Advertisement Details</td>
+                                    <td><input type="text" class="txt" name="ad_details" value="" size="50" /></td>
+                                <tr>
+                                <tr>
+                                    <td>Advertisement Category</td>
+                                    <td>
+                                        <select class="txt" name="ad_category">
+                                            <option>Books</option>
+                                            <option>Clothes</option>
+                                            <option>Electronics</option>
+                                            <option>Household Items</option>
+                                            <option>Services</option>
+                                            <option>Cycles</option>
+                                            <option>Stationery</option>
+                                            <option>Others</option>
+                                        </select>
+                                   </td>
+                                </tr>
+                                <tr>
+                                    <td>Upload Image</td>
+                                    <td><input name="ad_img" accept="image/jpeg" type="file"></td>
+                                </tr>
+                                <tr>
+                                    <td>Item Price</td>
+                                    <td><input type="text" name="ad_price" value="" size="5" class="txt"/></td>
+                                </tr>
+                                <tr>
+                                    <td>Date Added</td>
+                                    <td><input type="text" name="ad_date" value="' . date("Y\-m\-d") . '" disabled="disabled" class="txt"/></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="reset" value="RESET" name="ad_reset" class="btn"/></td>
+                                    <td><input type="submit" value="SUBMIT" name="ad_submit" class="btn"/></td>
+                                </tr>
+                            </form>
+                        </table>
+                    </div>
                 </div>
                  </div>
                 </div>
             </div>
         </div>
-                <div id="foot">
+                 <div id="foot">
             <div id="foot_cen">
                 <h6><a href="index.php">phoenix</a></h6>
                 <center>

@@ -1,14 +1,8 @@
 <?php
 
 session_start();
-mysql_connect("localhost", "root", "");
-mysql_select_db("zerorequiem");
-if (isset($_REQUEST['ad_submit'])) {
-    $name = mysql_real_escape_string($_SESSION['name']);
-    $pass = mysql_real_escape_string($_SESSION['pass']);
-    $mysql = mysql_query("SELECT * FROM user WHERE email = '{$name}' AND pwd = '{$pass}'");
-    if (mysql_num_rows($mysql) < 1) {
-        echo '
+if ($_SESSION['loggedin'] === "NO") {
+    echo '
     <html>
             <head>
                     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -23,7 +17,7 @@ if (isset($_REQUEST['ad_submit'])) {
             <div id="head_cen">
                 <div id="head_sup" class="head_pad">
                     <p class="search">
-                        <form name="login" action ="profile.php" method="POST" class="search">
+                        <form name="login" action ="login.php" method="POST" class="search">
                             <input type="text" name = "login_name" class="txt" onfocus="if(this.value == "Email") { this.value = ""; }" value="Email" size="15" />
                             <input type="password" name = "login_pwd" class="txt" onfocus="if(this.value == "Password") { this.value = ""; }" value="Password"  size="15" />
                             <input type="submit" class="btn" value="LOGIN" name="login_submit" />
@@ -82,13 +76,11 @@ if (isset($_REQUEST['ad_submit'])) {
     </div>
         </body>
     </html>';
-    } else {
-        $_SESSION['loggedin'] = "YES";
-        $_SESSION['name'] = $name;
-        $_SESSION['pass'] = $pass;
-        $con = mysql_connect("localhost", "root", "");
-        if (!$con) {
-            die('<html>
+} else if ($_SESSION['loggedin'] === "YES") {
+
+    $con = mysql_connect("localhost", "root", "");
+    if (!$con) {
+        die('<html>
                 <head>
                    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
                     <link rel="stylesheet" type="text/css" href="/css/styles.css" media="screen"/>
@@ -160,36 +152,36 @@ if (isset($_REQUEST['ad_submit'])) {
         </div>
                 </body>
             </html>');
+    } else {
+        $mysql = mysql_query("SELECT * FROM user WHERE email = '{$name}' AND pwd = '{$pass}'");
+        $result = mysql_fetch_array($mysql);
+        $uid = $result['uid'];
+        $mob = $result['mob'];
+        $date = date("Y\-m\-d");
+        $addetails = ucwords($_POST['ad_details']);
+
+        if (isset($_FILES['ad_img']) && $_FILES['ad_img']['size'] <= 0) {
+            $fp = fopen('no-photo.png', 'r');
+            $data = fread($fp, filesize('no-photo.png'));
+            $image = addslashes($data);
+            fclose($fp);
+        } else if (isset($_FILES['ad_img']) && $_FILES['ad_img']['size'] > 0) {
+
+            $tmpName = $_FILES['ad_img']['tmp_name'];
+
+            // Read the file 
+            $fp = fopen($tmpName, 'r');
+            $data = fread($fp, filesize($tmpName));
+            $image = addslashes($data);
+            fclose($fp);
         } else {
-            $mysql = mysql_query("SELECT * FROM user WHERE email = '{$name}' AND pwd = '{$pass}'");
-            $result = mysql_fetch_array($mysql);
-            $uid = $result['uid'];
-            $mob = $result['mob'];
-            $date = date("Y\-m\-d");
-            $addetails = ucwords($_POST['ad_details']);
+            
+        }
 
-            if (isset($_FILES['ad_img']) && $_FILES['ad_img']['size'] <= 0) {
-                $fp = fopen('no-photo.png', 'r');
-                $data = fread($fp, filesize('no-photo.png'));
-                $image = addslashes($data);
-                fclose($fp);
-            } else if (isset($_FILES['ad_img']) && $_FILES['ad_img']['size'] > 0) {
+        $insert_table2 = "INSERT INTO ad (uid, mob, ad_details, ad_category, ad_img, ad_price, ad_added, ad_approved)VALUES('$uid','$mob','$addetails','$_REQUEST[ad_category]', '$image' ,'$_REQUEST[ad_price]','$date',' 0 ')";
 
-                $tmpName = $_FILES['ad_img']['tmp_name'];
-
-                // Read the file 
-                $fp = fopen($tmpName, 'r');
-                $data = fread($fp, filesize($tmpName));
-                $image = addslashes($data);
-                fclose($fp);
-            } else {
-                
-            }
-
-            $insert_table2 = "INSERT INTO ad (uid, mob, ad_details, ad_category, ad_img, ad_price, ad_added, ad_approved)VALUES('$uid','$mob','$addetails','$_REQUEST[ad_category]', '$image' ,'$_REQUEST[ad_price]','$date',' 0 ')";
-
-            if (!mysql_query($insert_table2, $con)) {
-                die('<html>
+        if (!mysql_query($insert_table2, $con)) {
+            die('<html>
                 <head>
                    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
                     <link rel="stylesheet" type="text/css" href="/css/styles.css" media="screen"/>
@@ -261,8 +253,8 @@ if (isset($_REQUEST['ad_submit'])) {
         </div>
                 </body>
             </html>');
-            } else {
-                echo '<html>
+        } else {
+            echo '<html>
                <head>
                    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
                     <link rel="stylesheet" type="text/css" href="/css/styles.css" media="screen"/>
@@ -356,7 +348,6 @@ if (isset($_REQUEST['ad_submit'])) {
         </div>
                 </body>
             </html>';
-            }
         }
     }
 }

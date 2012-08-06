@@ -23,7 +23,7 @@
                     </p>';
                     } else if ($_SESSION['loggedin'] === "NO") {
                         echo '<p class="search">
-                        <form name="login" action ="profile.php" method="POST" class="search">
+                        <form name="login" action ="login.php" method="POST" class="search">
                             <input type="text" name = "login_name" class="txt" onfocus="if(this.value == "Email") { this.value = ""; }" value="Email" size="15" />
                             <input type="password" name = "login_pwd" class="txt" onfocus="if(this.value == "Password") { this.value = ""; }" value="Password"  size="15" />
                             <input type="submit" class="btn" value="LOGIN" name="login_submit" />
@@ -33,12 +33,24 @@
                     ?>
                     <h1 class = "logo"><a href = "index.php">PHOENIX CONNEXIONS</a></h1>
 
-                    <ul>
+                    <?php
+                    if ($_SESSION['loggedin'] === "NO") {
+                        echo' <ul>
                         <li><a href = "index.php">Home</a></li>
                         <li><a href = "register.php">Sign Up</a></li>
                         <li><a href = "advertisement.php">Market</a></li>
                         <li><a class = "active" href = "#"><font size = "1.5em">Services</font></a></li>
-                    </ul>
+                        </ul>';
+                    } else {
+                        if ($_SESSION['loggedin'] === "YES") {
+                            echo' <ul>
+                        <li><a href = "index.php">Home</a></li>
+                        <li><a href = "advertisement.php">Market</a></li>
+                        <li><a class = "active" href = "#">Services</a></li>
+                        </ul>';
+                        }
+                    }
+                    ?>
                 </div>
             </div>
         </div>

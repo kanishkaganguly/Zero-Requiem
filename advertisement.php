@@ -17,14 +17,14 @@ session_start();
                     <?php
                     if ($_SESSION['loggedin'] === "YES") {
                         echo '<p class="search">
-                      <form name = "logout" action = "/index.php" method = "link" class="search">
+                      <form name = "logout" action = "index.php" method = "link" class="search">
                             <input type = "text" name = "login_name" VALUE = "' . $_SESSION['name'] . '" size = "15" disabled = "disabled" class="txt" />
                             <a href="index.php"><input type = "submit" value = "LOGOUT" name = "login_submit" class="btn" /></a>
                        </form>
                     </p>';
                     } else if ($_SESSION['loggedin'] === "NO") {
                         echo '<p class="search">
-                        <form name="login" action ="profile.php" method="POST" class="search">
+                        <form name="login" action ="login.php" method="POST" class="search">
                             <input type="text" name = "login_name" class="txt" onfocus="if(this.value == "Email") { this.value = ""; }" value="Email" size="15" />
                             <input type="password" name = "login_pwd" class="txt" onfocus="if(this.value == "Password") { this.value = ""; }" value="Password"  size="15" />
                             <input type="submit" class="btn" value="LOGIN" name="login_submit" />
@@ -39,7 +39,7 @@ session_start();
                         echo '<ul>
                                 <li><a href="index.php">Home</a></li>
                                 <li><a class="active" href="advertisement.php">Market</a></li>
-                                <li><a href="services.php">Services</a></li>
+                                <li><a href="profile.php">Profile</a></li>
                                 <li><a href="about.php">About</a></li>
                             </ul>';
                     } else if ($_SESSION['loggedin'] === "NO") {

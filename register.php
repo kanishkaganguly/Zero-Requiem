@@ -78,7 +78,7 @@ and open the template in the editor.
             <div id="head_cen">
                 <div id="head_sup" class="head_pad">
                     <p class="search">
-                    <form name="login" action ="profile.php" method="POST" class="search">
+                    <form name="login" action ="login.php" method="POST" class="search">
                         <input type="text" name ="login_name" class="txt" onfocus="if(this.value == 'Email') { this.value = ''; }" value='Email' size="15" />
                         <input type="password" name ="login_pwd" class="txt" onfocus="if(this.value == 'Password') { this.value = ''; }" value='Password'  size="15" />
                         <input type="submit" class="btn" value="LOGIN" name="login_submit" />
