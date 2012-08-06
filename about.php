@@ -33,10 +33,10 @@
                     <h1 class="logo"><a href="index.php">PHOENIX CONNEXIONS</a></h1>
 
                     <ul>
-                        <li><a href="/index.php">Home</a></li>
-                        <li><a href="/register.php">Sign Up</a></li>
-                        <li><a href="/advertisement.php">Market</a></li>
-                        <li><a class="active" href="/about.php">About</a></li>
+                        <li><a href="/phoenix/index.php">Home</a></li>
+                        <li><a href="/phoenix/register.php">Sign Up</a></li>
+                        <li><a href="/phoenix/advertisement.php">Market</a></li>
+                        <li><a class="active" href="/phoenix/about.php">About</a></li>
                     </ul>
                 </div>
             </div>
@@ -84,13 +84,13 @@
                         <li class="space"></li><li class="space"></li>
                         <li class="space"></li><li class="space"></li>
                         <li class="space"></li><li class="space"></li>
-                        <li><a href="/index.php">HOME</a></li>
+                        <li><a href="/phoenix/index.php">HOME</a></li>
                         <li class="space">|</li>
-                        <li><a href="/about.php">ABOUT</a></li>
+                        <li><a href="/phoenix/about.php">ABOUT</a></li>
                         <li class="space">|</li>
-                        <li><a href="/services.php">SERVICES</a></li>
+                        <li><a href="/phoenix/services.php">SERVICES</a></li>
                         <li class="space">|</li>
-                        <li><a href="/advertisement.php">MARKET</a></li>
+                        <li><a href="/phoenix/advertisement.php">MARKET</a></li>
                     </ul>
                 </center>
                 <p>© Phoenix Connection. Designed by: <t title="Kanishka Ganguly">Nightstalker</t> | <t title="Nimesh Ghelani">Sephiroth</t> | <t title="Soham Chatterjee">ElementCode</t></p>
