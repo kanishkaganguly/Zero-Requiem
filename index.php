@@ -1,8 +1,14 @@
 <?php
 session_start();
 $_SESSION['count'] = 0;
-if ($_SESSION['count'] == 0) {
+if ($_SESSION['count'] == 5) {
     $_SESSION['loggedin'] = "NO";
+    $_SESSION['count2'] = 1;
+} else {
+    $_SESSION['count2'] = 1;
+}
+if ($_SESSION['count2'] != 1) {
+    
 }
 ?>
 
