@@ -75,6 +75,16 @@ if ($_SESSION['loggedin'] === "NO") {
         <meta http-equiv = "Content-Type" content = "text/html; charset=utf-8" />
         <title>PHOENIX | CONNEXIONS</title>
         <link href = "css/styles.css" rel = "stylesheet" type = "text/css" media = "all" />
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+        <link rel="stylesheet" href="/fancybox/source/jquery.fancybox.css?v=2.0.6" type="text/css" media="screen" />
+        <script type="text/javascript" src="/fancybox/source/jquery.fancybox.pack.js?v=2.0.6"></script>
+        <link rel="stylesheet" href="/fancybox/source/helpers/jquery.fancybox-thumbs.css?v=2.0.6" type="text/css" media="screen" />
+        <script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-thumbs.js?v=2.0.6"></script>
+         <script type="text/javascript">
+            $(document).ready(function() {
+            $(".fancybox").fancybox();
+            });
+        </script>
     </head>
 
     <body>
@@ -129,6 +139,13 @@ if ($_SESSION['loggedin'] === "NO") {
                             <h5>The Market</h5>
                                 <p>Your one stop shop for all things buying and selling</p>
                                 <p><a href="/phoenix/advertisement.php"><button class="btn">MARKET</button></a></p>
+                        </li>
+                        <li>
+                            <h5>T-Shirts</h5>
+                                <p>We have partnered with Rahul Agarwal of 2K11, an amazing designer. He has designed a college T-Shirt.</p>
+                                <p>
+                                <a class="fancybox" rel="group" href="poster.jpg"><button>Open Shirt</button></a>
+                                </p>
                         </li>
                       </ul>
                 </div>
