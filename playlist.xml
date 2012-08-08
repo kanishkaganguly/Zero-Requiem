@@ -46,4 +46,10 @@
         <artist>Housefull 2</artist>
         <path>/songs/Anarkali Disco Chali.mp3</path>
     </item>
+ <item>
+        <title>Pani Da Rang</title>
+        <artist>Vicky Donor</artist>
+        <path>/songs/Pani Da Rang.mp3</path>
+    </item>
+
 </playlist>
