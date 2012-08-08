@@ -26,4 +26,24 @@
         <artist>LMFAO</artist>
         <path>/songs/Party Rock Anthem.mp3</path>
     </item>
+    <item>
+        <title>Jugni</title>
+        <artist>Cocktail</artist>
+        <path>/songs/Jugni.mp3</path>
+    </item>
+    <item>
+        <title>Abhi Abhi</title>
+        <artist>Jism 2</artist>
+        <path>/songs/Abhi Abhi.mp3</path>
+    </item>
+    <item>
+        <title>Tumhi Ho Bandhu</title>
+        <artist>Cocktail</artist>
+        <path>/songs/Tumhi Ho Bandhu.mp3</path>
+    </item>
+    <item>
+        <title>Anarkali Disco Chali</title>
+        <artist>Housefull 2</artist>
+        <path>/songs/Anarkali Disco Chali.mp3</path>
+    </item>
 </playlist>

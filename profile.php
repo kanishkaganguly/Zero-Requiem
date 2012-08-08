@@ -142,9 +142,10 @@ if ($_SESSION['loggedin'] === "NO") {
                         </li>
                         <li>
                             <h5>T-Shirts</h5>
-                                <p>We have partnered with Rahul Agarwal of 2K11, an amazing designer. He has designed a college T-Shirt.</p>
+                                <p>We have partnered with designers of 2K11 to bring you college T-Shirts.</p>
                                 <p>
-                                <a class="fancybox" rel="group" href="poster.jpg"><button>VIEW</button></a>
+                                <a class="fancybox" rel="group" href="poster.jpg"><button title="Use Left and Right Arrow Keys To View All Shirts">View</button></a>
+                                <a class="fancybox" rel="group" href="poster2.jpg"></a>
                                 </p>
                         </li>
                         <li>

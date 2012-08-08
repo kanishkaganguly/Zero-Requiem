@@ -103,6 +103,7 @@ if ($_SESSION['count'] == 0) {
                         fcontent[3]="<center><b>What\'s new?</b><br><br><br>We provide forums, chatrooms, a market portal and much more to come...</center>";
                         fcontent[4]="<center><b>What\'s new?</b><br><br><br>Do register on our website to access all our amazing features.</center>";
                         fcontent[5]="<center><b>What\'s new?</b><br><br><br>We have colalborated with Rahul Agarwal of 2K11, an amazing designer, to bring you some brilliant T-Shirts of B.I.T.<br>Login For More Info</br></center>";
+                        fcontent[6]="<center><b>What\'s new?</b><br><br><br>We have colalborated with Simarjit Gandhi of 2K11, an amazing designer, to bring you some brilliant T-Shirts of B.I.T.<br>Login For More Info</br></center>";
                         closetag='</div>';
 
                         var fwidth='798px'; //set scroller width
