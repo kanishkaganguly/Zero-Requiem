@@ -89,17 +89,20 @@ if ($_SESSION['count'] == 0) {
                     <script type="text/javascript">
 
                         var delay = 2000; //set delay between message change (in miliseconds)
-                        var maxsteps=30; // number of steps to take to change from start color to endcolor
+                        var maxsteps=40; // number of steps to take to change from start color to endcolor
                         var stepdelay=40; // time in miliseconds of a single step
                         //**Note: maxsteps*stepdelay will be total time in miliseconds of fading effect
                         var startcolor= new Array(255,255,255); // start color (red, green, blue)
-                        var endcolor=new Array(0,0,0); // end color (red, green, blue)
+                        var endcolor=new Array(255,255,255); // end color (red, green, blue)
 
                         var fcontent=new Array();
                         begintag='<div style="font: normal 14px Arial; padding: 5px;">'; //set opening tag, such as font declarations
-                        fcontent[0]="<b>What\'s new?</b><br>New scripts added to the Scroller category!<br><br>The MoreZone has been updated. <a href='../morezone/index.htm'>Click here to visit</a>";
-                        fcontent[1]="Dynamic Drive has been featured on Jars as a top 5% resource, and About.com as a recommended DHTML destination.";
-                        fcontent[2]="Ok, enough with these pointless messages. You get the idea behind this script.</a>";
+                        fcontent[0]="<center><b>What\'s new?</b><br><br><br>Just added a music player, belting out the top hits for you... LOGIN TO HEAR!</center>";
+                        fcontent[1]="<center><b>What\'s new?</b><br><br><br>WE HAVE JUST REACHED 50 MEMBERS! THANK YOU PEOPLE! :D</center>";
+                        fcontent[2]="<center><b>What\'s new?</b><br><br><br>We provide all the services you'll need to ease your daily lives.</center>";
+                        fcontent[3]="<center><b>What\'s new?</b><br><br><br>We provide forums, chatrooms, a market portal and much more to come...</center>";
+                        fcontent[4]="<center><b>What\'s new?</b><br><br><br>Do register on our website to access all our amazing features.</center>";
+                        fcontent[5]="<center><b>What\'s new?</b><br><br><br>We have colalborated with Rahul Agarwal of 2K11, an amazing designer, to bring you some brilliant T-Shirts of B.I.T.<br>Login For More Info</br></center>";
                         closetag='</div>';
 
                         var fwidth='798px'; //set scroller width

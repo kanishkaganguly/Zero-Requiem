@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<playlist>
+    <item>
+        <title>Kryptonite</title>
+        <artist>3 Doors Down</artist>
+        <path>/songs/Kryptonite.mp3</path>
+    </item>
+    <item>
+        <title>Watch Over You</title>
+        <artist>Alter Bridge</artist>
+        <path>/songs/Watch Over You.mp3</path>
+    </item>
+    <item>
+        <title>Black Balloon</title>
+        <artist>Goo Goo Dolls</artist>
+        <path>/songs/Black Balloon.mp3</path>
+    </item>
+    <item>
+        <title>Dear God</title>
+        <artist>Avenged Sevenfold</artist>
+        <path>/songs/Dear God.mp3</path>
+    </item>
+    <item>
+        <title>Party Rock Anthem</title>
+        <artist>LMFAO</artist>
+        <path>/songs/Party Rock Anthem.mp3</path>
+    </item>
+</playlist>

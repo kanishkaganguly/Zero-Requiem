@@ -147,6 +147,13 @@ if ($_SESSION['loggedin'] === "NO") {
                                 <a class="fancybox" rel="group" href="poster.jpg"><button>VIEW</button></a>
                                 </p>
                         </li>
+                        <li>
+                            <h5>Music Player</h5>
+                                <p>We have launched a music player, bringing you some awesome tracks from the music world</p>
+                                <p>
+                                <a href="music.php"><button>PLAYER</button></a>
+                                </p>
+                        </li> 
                       </ul>
                 </div>
             </div>
