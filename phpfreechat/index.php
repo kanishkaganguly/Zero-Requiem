@@ -48,7 +48,7 @@ if ($_SESSION['loggedin'] === "NO") {
 
                     <ul>
                         <li><a href="/index.php">Home</a></li>
-                        <li><a  href="/register.php">Sign Up</a></li>
+                        <li><a  href="/profile.php">Profile</a></li>
                         <li><a href="/advertisement.php">Market</a></li>
                         <li><a class="active" href="#">Chat</a></li>
                     </ul>
