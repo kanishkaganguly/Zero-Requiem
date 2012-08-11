@@ -2,10 +2,10 @@
 
 if (isset($_GET['id']) && is_numeric($_GET['id'])) {
 
-    $link = mysql_connect("localhost", "root", "")
+    $link = mysql_connect("localhost", "college_zeroreq", "")
             or die("Could not connect: " . mysql_error());
 
-    mysql_select_db("zerorequiem") or die(mysql_error());
+    mysql_select_db("college_zeroreq") or die(mysql_error());
 
     $sql = "DELETE FROM ad WHERE ad_id=" . $_GET['id'] . ";";
 
@@ -133,11 +133,11 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
                                 <td><span>Remove Ad</span></td>
                             </tr>'
         .
-        $con = mysql_connect("localhost", "root", "");
+        $con = mysql_connect("localhost", "college_zeroreq", "oblivion");
         if (!$con) {
             die('COULD NOT CONNECT' . mysql_error());
         } else {
-            mysql_select_db("zerorequiem");
+            mysql_select_db("college_zeroreq");
 
             $get_uid = mysql_query("SELECT * FROM user WHERE email = '{$_SESSION['name']}' AND pwd = '{$_SESSION['pass']}'");
             $row2 = mysql_fetch_array($get_uid);

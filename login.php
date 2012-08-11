@@ -1,8 +1,8 @@
 <?php
 
 session_start();
-mysql_connect("localhost", "root", "");
-mysql_select_db("zerorequiem");
+mysql_connect("localhost", "college_zeroreq", "oblivion");
+mysql_select_db("college_zeroreq");
 if (isset($_REQUEST['login_submit'])) {
     $name = mysql_real_escape_string($_POST['login_name']);
     $pass = mysql_real_escape_string(md5($_POST['login_pwd']));
@@ -15,5 +15,5 @@ if (isset($_REQUEST['login_submit'])) {
         $_SESSION['pass'] = $pass;
     }
 }
-header("Location: /phoenix/profile.php");
+header("Location: profile.php");
 ?>

@@ -2,10 +2,10 @@
 
 if (isset($_GET['id']) && is_numeric($_GET['id'])) {
 
-    $link = mysql_connect("localhost", "root", "")
+    $link = mysql_connect("localhost", "college_zeroreq", "oblivion")
             or die("Could not connect: " . mysql_error());
 
-    mysql_select_db("zerorequiem") or die(mysql_error());
+    mysql_select_db("college_zeroreq") or die(mysql_error());
 
     $sql = "SELECT ad_img FROM ad WHERE ad_approved = 1 AND ad_id=" . $_GET['id'] . ";";
 
